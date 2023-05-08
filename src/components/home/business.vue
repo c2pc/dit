@@ -1,9 +1,9 @@
 <template>
     <div ref="hoverElement" class="hoverElement">
         <img :class="isHovered ? 'hover' : 'hidden'" alt="business"
-             class="element" src="../../assets/images/home/business-hover.png">
+             class="element" src="@/assets/images/home/business-hover.png">
         <img :class="isHovered ? 'hidden' : 'hover'" alt="business"
-             class="element default" src="../../assets/images/home/business-default.png">
+             class="element default" src="@/assets/images/home/business-default.png">
         <Tooltip v-if="isHovered" :onClick="onClick" class="tooltip"
                  description="Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития."
                  header="Технологии для бизнеса"/>

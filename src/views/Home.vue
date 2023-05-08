@@ -11,10 +11,10 @@
 
 <script lang="ts" setup>
 import type {Component} from "vue";
-import video from '../components/home/video.vue'
-import residents from '../components/home/residents.vue'
-import management from '../components/home/management.vue'
-import business from '../components/home/business.vue'
+import video from '@/components/home/video.vue'
+import residents from '@/components/home/residents.vue'
+import management from '@/components/home/management.vue'
+import business from '@/components/home/business.vue'
 
 type Element = {
     name: string;
@@ -39,7 +39,7 @@ const elements: Element[] = [
   max-height: 1080px;
   min-height: 100vh;
 
-  background: url("../assets/images/home/shadow.svg") no-repeat right bottom, url("../assets/images/home/road.svg") no-repeat center center, #010010;
+  background: url("@/assets/images/home/shadow.svg") no-repeat right bottom, url("@/assets/images/home/road.svg") no-repeat center center, #010010;
   mix-blend-mode: normal;
 
   .highlight {

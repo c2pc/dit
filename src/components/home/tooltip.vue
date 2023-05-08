@@ -1,7 +1,7 @@
 <template>
     <div class="tooltip">
         <div class="header-container">
-            <img alt="" class="icon" src="../../assets/images/home/building.svg">
+            <img alt="" class="icon" src="@/assets/images/home/building.svg">
             <span class="header">{{ header }}</span>
             <span class="description">{{ description }}</span>
         </div>

@@ -1,10 +1,10 @@
 <template>
     <div ref="hoverElement" class="hoverElement">
         <img :class="isHovered ? 'hover' : 'hidden'" alt=""
-             class="element" src="../../assets/images/home/management-hover.png"
+             class="element" src="@/assets/images/home/management-hover.png"
              style="margin-top: -262px; margin-left: -32px;">
         <img :class="isHovered ? 'hidden' : 'hover'" alt=""
-             class="element default" src="../../assets/images/home/management-default.png">
+             class="element default" src="@/assets/images/home/management-default.png">
         <Tooltip v-if="isHovered" :onClick="onClick" class="tooltip"
                  description="Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития."
                  header="Технологии для бизнеса"/>
