@@ -17,11 +17,13 @@ import {ref} from "vue";
 import Tooltip from "./tooltip.vue"
 import HandTapIcon from "@/assets/images/home/handtap.svg";
 import {useTouch} from "@/helpers/touch";
+import {useRouter} from "vue-router";
 
 const touchElement = ref(null)
 const touch = useTouch(touchElement)
-const onClick = () => {
-}
+
+const router = useRouter()
+const onClick = () => router.push("/management")
 </script>
 
 <style lang="scss" scoped>
