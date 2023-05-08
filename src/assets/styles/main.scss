@@ -1,0 +1,30 @@
+@import "./home";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Golos UI VF";
+  src: url("../fonts/golos-ui_vf.woff2") format("woff2"),
+  url("../fonts/golos-ui_vf.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#app {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  height: 100vh;
+  width: 100vw;
+  overflow: unset;
+}
+
+body, html {
+  overflow: hidden;
+}
