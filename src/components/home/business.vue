@@ -1,10 +1,11 @@
 <template>
-    <div ref="hoverElement" class="hoverElement">
-        <img :class="isHovered ? 'hover' : 'hidden'" alt="business"
+    <div ref="touchElement" class="hoverElement" @click="touch.onClick">
+        <img :class="touch.isTouch.value ? 'hover' : 'hidden'" alt="business"
              class="element" src="@/assets/images/home/business-hover.png">
-        <img :class="isHovered ? 'hidden' : 'hover'" alt="business"
+        <img :class="touch.isTouch.value ? 'hidden' : 'hover'" alt="business"
              class="element default" src="@/assets/images/home/business-default.png">
-        <Tooltip v-if="isHovered" :onClick="onClick" class="tooltip"
+        <Tooltip v-if="touch.isTouch.value" :icon="BuildingIcon" :onClick="onClick"
+                 class="tooltip"
                  description="Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития."
                  header="Технологии для бизнеса"/>
     </div>
@@ -12,11 +13,12 @@
 
 <script lang="ts" setup>
 import {ref} from "vue";
-import {useElementHover} from "@vueuse/core";
 import Tooltip from "@/components/home/tooltip.vue";
+import BuildingIcon from "@/assets/images/home/building.svg";
+import {useTouch} from "@/helpers/touch";
 
-const hoverElement = ref()
-const isHovered = useElementHover(hoverElement)
+const touchElement = ref(null)
+const touch = useTouch(touchElement)
 const onClick = () => {
 }
 </script>

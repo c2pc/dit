@@ -1,7 +1,7 @@
 <template>
     <div class="tooltip">
         <div class="header-container">
-            <img alt="" class="icon" src="@/assets/images/home/building.svg">
+            <img alt="" class="icon" :src="icon">
             <span class="header">{{ header }}</span>
             <span class="description">{{ description }}</span>
         </div>
@@ -12,6 +12,7 @@
 <script lang="ts" setup>
 
 const props = defineProps<{
+    icon?: string;
     header: string;
     description: string;
     onClick?: () => any;
