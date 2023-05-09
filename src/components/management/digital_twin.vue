@@ -1,21 +1,21 @@
 <template>
-    <div ref="touchElement" @click="touch.onClick" class="hoverElement">
+    <div ref="touchElement" class="hoverElement" @click="touch.onClick">
         <img :class="touch.isTouch.value ? 'hover' : 'hidden'" alt=""
-             class="element" src="@/assets/images/home/video-hover.png" style="margin-left: -10px;">
+             class="element" src="@/assets/images/management/digital_twin-hover.png"
+             style="margin-left: -70px;margin-top: -174px;">
         <img :class="touch.isTouch.value ? 'hidden' : 'hover'" alt=""
-             class="element default" src="@/assets/images/home/video-default.png">
-        <Tooltip v-if="touch.isTouch.value" :onClick="onClick" class="tooltip"
-                 :icon="VideoIcon"
+             class="element default" src="@/assets/images/management/digital_twin-default.png">
+        <Tooltip v-if="touch.isTouch.value" :icon="MapTrifold" :onClick="onClick"
+                 class="tooltip"
                  description="Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития."
-                 header="Цифровая Москва"/>
+                 header="Цифровой двойник"/>
     </div>
 </template>
 
 <script lang="ts" setup>
-import {Ref, ref} from "vue";
-import {useElementHover} from "@vueuse/core";
+import {ref} from "vue";
 import Tooltip from "@/components/tooltip.vue";
-import VideoIcon from "@/assets/images/home/video.svg";
+import MapTrifold from "@/assets/images/management/maptrifold.svg";
 import {useTouch} from "@/helpers/touch";
 
 const touchElement = ref(null)
@@ -29,14 +29,14 @@ const onClick = () => {
 .hoverElement {
   .element {
     &.default {
-      width: 1026px;
-      height: 449px;
+      width: 1031px;
+      height: 629px;
     }
   }
 
   .tooltip {
-    top: 12px;
-    left: -345px;
+    top: 150px;
+    left: -283px;
   }
 
 }

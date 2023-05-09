@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import {ref} from "vue";
-import Tooltip from "./tooltip.vue"
+import Tooltip from "../tooltip.vue"
 import HandTapIcon from "@/assets/images/home/handtap.svg";
 import {useTouch} from "@/helpers/touch";
 import {useRouter} from "vue-router";

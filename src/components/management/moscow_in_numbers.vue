@@ -1,13 +1,13 @@
 <template>
     <div ref="touchElement" @click="touch.onClick" class="hoverElement">
         <img :class="touch.isTouch.value ? 'hover' : 'hidden'" alt=""
-             class="element" src="@/assets/images/home/video-hover.png" style="margin-left: -10px;">
+             class="element" src="@/assets/images/management/moscow_in_numbers-hover.png" style="margin-left: 4px;">
         <img :class="touch.isTouch.value ? 'hidden' : 'hover'" alt=""
-             class="element default" src="@/assets/images/home/video-default.png">
+             class="element default" src="@/assets/images/management/moscow_in_numbers-default.png">
         <Tooltip v-if="touch.isTouch.value" :onClick="onClick" class="tooltip"
                  :icon="VideoIcon"
                  description="Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития."
-                 header="Цифровая Москва"/>
+                 header="Москва в цифрах"/>
     </div>
 </template>
 
@@ -29,14 +29,14 @@ const onClick = () => {
 .hoverElement {
   .element {
     &.default {
-      width: 1026px;
-      height: 449px;
+      width: 782px;
+      height: 815px;
     }
   }
 
   .tooltip {
-    top: 12px;
-    left: -345px;
+      top: -115px;
+      left: 62px;
   }
 
 }

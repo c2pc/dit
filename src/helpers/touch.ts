@@ -1,6 +1,6 @@
 import type {Ref} from "vue";
 import {ref} from "vue";
-import {onClickOutside} from "@vueuse/core";
+import {onClickOutside, useElementHover} from "@vueuse/core";
 
 export type ITouch = {
     isTouch: Ref<boolean>
@@ -8,15 +8,16 @@ export type ITouch = {
 };
 
 export const useTouch = (hoverElement: Ref): ITouch => {
-    const isTouch: Ref<boolean> = ref<boolean>(false)
+    const isTouch: Ref<boolean> = useElementHover(hoverElement)
 
-    onClickOutside(hoverElement, event => {
+
+    /*onClickOutside(hoverElement, event => {
         isTouch.value = false
-    })
-    const onClick = () => {isTouch.value = true}
+    })*/
+    //const onClick = () => {isTouch.value = true}
     
     return {
         isTouch: isTouch,
-        onClick: onClick
+        onClick:  () => {}
     }
 }

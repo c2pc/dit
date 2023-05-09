@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 import {ref} from "vue";
-import Tooltip from "@/components/home/tooltip.vue";
+import Tooltip from "@/components/tooltip.vue";
 import BuildingIcon from "@/assets/images/home/building.svg";
 import {useTouch} from "@/helpers/touch";
 
