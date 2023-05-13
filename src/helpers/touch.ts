@@ -7,13 +7,21 @@ export type ITouch = {
     onClick: () => void
 };
 
-export const useTouch = (hoverElement: Ref): ITouch => {
+export const useTouch = (hoverElement: Ref, disable: boolean): ITouch => {
     const isTouch: Ref<boolean> = ref<boolean>(false)
 
+    if (disable) {
+        return {
+            isTouch: isTouch,
+            onClick: () => {
+            }
+        }
+    }
 
     onClickOutside(hoverElement, event => {
         isTouch.value = false
     })
+
     const onClick = () => {
         isTouch.value = true
     }

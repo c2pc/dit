@@ -20,6 +20,7 @@ import Tooltip from "@/components/tooltip.vue";
 import {useTouch} from "@/helpers/touch";
 
 const props = defineProps<{
+    disabled?: boolean;
     defaultIcon: string;
     hoverIcon: string;
     description: string;
@@ -32,7 +33,7 @@ const props = defineProps<{
 }>()
 
 const hoverElement = ref(null)
-const touch = useTouch(hoverElement)
+const touch = useTouch(hoverElement, props.disabled)
 </script>
 
 <style lang="scss" scoped>
