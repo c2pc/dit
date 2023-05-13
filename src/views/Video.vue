@@ -1,5 +1,8 @@
 <template>
     <div class="content video">
+        <div class="back-button">
+            <back type="white"/>
+        </div>
         <div class="highlight"></div>
         <div class="elements">
             <div v-for="el in elements" :style="{...el.position}" class="element">
@@ -8,10 +11,10 @@
                         :defaultIcon="el.defaultIcon"
                         :defaultIconStyle="el.defaultIconStyle"
                         :description="el.description"
+                        :disabled="true"
                         :header="el.header"
                         :hoverIcon="el.hoverIcon"
                         :hoverIconStyle="el.hoverIconStyle"
-                        :disabled="true"
                         :onClick="el.onClick"
                         :tooltipIcon="el.tooltipIcon"
                         :tooltipPosition="el.tooltipPosition"
@@ -37,6 +40,7 @@ import PersonIcon from "@/assets/images/home/person.svg";
 import VideoDefault from "@/assets/images/home/video-default.png";
 import VideoHover from "@/assets/images/home/video-hover.png";
 import VideoIcon from "@/assets/images/home/video.svg";
+import Back from "@/components/back.vue";
 
 const elements: Element[] = [
     {
@@ -104,6 +108,13 @@ const elements: Element[] = [
 
   background: url("@/assets/images/home/shadow.svg") no-repeat right bottom, url("@/assets/images/home/road.svg") no-repeat center center, #010010;
   mix-blend-mode: normal;
+
+  .back-button {
+    position: absolute;
+    z-index: 2;
+    left: 120px;
+    top: 135px;
+  }
 
   .highlight {
     position: absolute;
