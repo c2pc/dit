@@ -23,13 +23,13 @@ import Back from "@/components/back.vue";
 import Block from "@/components/block.vue";
 import BlockImage from "@/components/block-image.vue";
 import BlockButton from "@/components/block-button.vue";
-import BooksIcon from "@/assets/images/resident/books.png";
-import BuildingIcon from "@/assets/images/resident/building.png";
-import FridgeIcon from "@/assets/images/resident/fridge.png";
-import HandIcon from "@/assets/images/resident/hand.png";
-import MoscowIcon from "@/assets/images/resident/moscow.png";
-import PlaneIcon from "@/assets/images/resident/plane.png";
-import RelocationIcon from "@/assets/images/resident/relocation.png";
+import BooksIcon from "@/assets/images/resident/books.svg";
+import BuildingIcon from "@/assets/images/resident/building.svg";
+import FridgeIcon from "@/assets/images/resident/fridge.svg";
+import HandIcon from "@/assets/images/resident/hand.svg";
+import MoscowIcon from "@/assets/images/resident/moscow.svg";
+import PlaneIcon from "@/assets/images/resident/plane.svg";
+import RelocationIcon from "@/assets/images/resident/relocation.svg";
 import router from "@/router";
 
 type Block = {

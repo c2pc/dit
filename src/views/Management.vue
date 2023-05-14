@@ -75,7 +75,7 @@ const elements: Element[] = [
         hoverIcon: MoscowInNumbersHover,
         description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
         header: "Москва в цифрах",
-        onClick: () => router.push("/moscow_in_numbers"),
+        onClick: () => router.push("/management/moscow_in_numbers"),
         tooltipPosition: {top: "-115px", left: "62px"},
         tooltipIcon: ListNumbersIcon,
         defaultIconStyle: {width: "782px", height: "815px"},

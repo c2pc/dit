@@ -15,8 +15,11 @@
 import {ref} from "vue";
 import {useTouch} from "@/helpers/touch";
 
+const props = defineProps<{
+    disabled?: boolean;
+}>()
 const hoverElement = ref(null)
-const touch = useTouch(hoverElement, false)
+const touch = useTouch(hoverElement, props.disabled)
 </script>
 
 <style lang="scss" scoped>
