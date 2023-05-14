@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue'
 import Management from '@/views/Management.vue'
 import Video from "@/views/Video.vue";
 import Business from "@/views/Business.vue";
+import Resident from "@/views/Resident.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
             path: '/business',
             name: 'business',
             component: Business
+        },
+        {
+            path: '/residents',
+            name: 'residents',
+            component: Resident
         },
     ]
 })
