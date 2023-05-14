@@ -1,7 +1,7 @@
 <template>
     <div class="content video">
         <div class="back-button">
-            <back type="white"/>
+            <back :show-description="true" type="white"/>
         </div>
         <div class="highlight"></div>
         <div class="elements">
