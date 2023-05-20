@@ -10,4 +10,5 @@ export type Element = {
     tooltipIcon: string;
     defaultIconStyle?: any;
     hoverIconStyle?: any;
+    disabled?: boolean;
 }

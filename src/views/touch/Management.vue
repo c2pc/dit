@@ -28,18 +28,18 @@ import Back from "@/components/back.vue";
 import Touch from "@/components/touch.vue";
 import {Element} from "@/types/element";
 import router from "@/router";
-import DigitalTwinDefault from "@/assets/images/management/digital_twin-default.png";
-import DigitalTwinHover from "@/assets/images/management/digital_twin-hover.png";
-import MapTrifold from "@/assets/images/management/maptrifold.svg";
-import DigitalTwinMetaDefault from "@/assets/images/management/digital_twin_meta-default.png";
-import DigitalTwinMetaHover from "@/assets/images/management/digital_twin_meta-hover.png";
-import GlobeHemisphereWestIcon from "@/assets/images/management/globeHemisphereWest.svg";
-import MoscowInNumbersDefault from "@/assets/images/management/moscow_in_numbers-default.png";
-import MoscowInNumbersHover from "@/assets/images/management/moscow_in_numbers-hover.png";
-import ListNumbersIcon from "@/assets/images/management/listNumbers.svg";
-import MoshubDefault from "@/assets/images/management/moshub-default.png";
-import MoshubHover from "@/assets/images/management/moshub-hover.png";
-import CodeIcon from "@/assets/images/management/code.svg";
+import DigitalTwinDefault from "@/assets/images/touch/management/digital_twin-default.png";
+import DigitalTwinHover from "@/assets/images/touch/management/digital_twin-hover.png";
+import MapTrifold from "@/assets/images/touch/management/maptrifold.svg";
+import DigitalTwinMetaDefault from "@/assets/images/touch/management/digital_twin_meta-default.png";
+import DigitalTwinMetaHover from "@/assets/images/touch/management/digital_twin_meta-hover.png";
+import GlobeHemisphereWestIcon from "@/assets/images/touch/management/globeHemisphereWest.svg";
+import MoscowInNumbersDefault from "@/assets/images/touch/management/moscow_in_numbers-default.png";
+import MoscowInNumbersHover from "@/assets/images/touch/management/moscow_in_numbers-hover.png";
+import ListNumbersIcon from "@/assets/images/touch/management/listNumbers.svg";
+import MoshubDefault from "@/assets/images/touch/management/moshub-default.png";
+import MoshubHover from "@/assets/images/touch/management/moshub-hover.png";
+import CodeIcon from "@/assets/images/touch/management/code.svg";
 
 const elements: Element[] = [
     {
@@ -106,7 +106,7 @@ const elements: Element[] = [
   max-height: 1080px;
   min-height: 100vh;
 
-  background: url("@/assets/images/management/shadow.svg") no-repeat left bottom, url("@/assets/images/management/road.svg") no-repeat center center, #010010;
+  background: url("@/assets/images/touch/management/shadow.svg") no-repeat left bottom, url("@/assets/images/management/road.svg") no-repeat center center, #010010;
   mix-blend-mode: normal;
 
   .back-button {
@@ -118,8 +118,9 @@ const elements: Element[] = [
 
   .highlight {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    width: 1232px;
+    height: 1232px;
+    left: calc(100vw / 2 - 616px);
     background: linear-gradient(146.36deg, #00B3FF 9.3%, #0A1ED7 96.42%);
     opacity: 0.35;
     box-shadow: inset 14px 24px 40px rgba(78, 184, 255, 0.59);

@@ -24,18 +24,18 @@
 import Touch from "@/components/touch.vue";
 import {Element} from "@/types/element";
 import router from "@/router";
-import ManagementDefault from "@/assets/images/home/management-default.png";
-import ManagementHover from "@/assets/images/home/management-hover.png";
-import HandTapIcon from "@/assets/images/home/handtap.svg";
-import BusinessDefault from "@/assets/images/home/business-default.png";
-import BusinessHover from "@/assets/images/home/business-hover.png";
-import BuildingIcon from "@/assets/images/home/building.svg";
-import ResidentsDefault from "@/assets/images/home/residents-default.png";
-import ResidentsHover from "@/assets/images/home/residents-hover.png";
-import PersonIcon from "@/assets/images/home/person.svg";
-import VideoDefault from "@/assets/images/home/video-default.png";
-import VideoHover from "@/assets/images/home/video-hover.png";
-import VideoIcon from "@/assets/images/home/video.svg";
+import ManagementDefault from "@/assets/images/touch/home/management-default.png";
+import ManagementHover from "@/assets/images/touch/home/management-hover.png";
+import HandTapIcon from "@/assets/images/touch/home/handtap.svg";
+import BusinessDefault from "@/assets/images/touch/home/business-default.png";
+import BusinessHover from "@/assets/images/touch/home/business-hover.png";
+import BuildingIcon from "@/assets/images/touch/home/building.svg";
+import ResidentsDefault from "@/assets/images/touch/home/residents-default.png";
+import ResidentsHover from "@/assets/images/touch/home/residents-hover.png";
+import PersonIcon from "@/assets/images/touch/home/person.svg";
+import VideoDefault from "@/assets/images/touch/home/video-default.png";
+import VideoHover from "@/assets/images/touch/home/video-hover.png";
+import VideoIcon from "@/assets/images/touch/home/video.svg";
 
 const elements: Element[] = [
     {
@@ -101,13 +101,14 @@ const elements: Element[] = [
   max-height: 1080px;
   min-height: 100vh;
 
-  background: url("@/assets/images/home/shadow.svg") no-repeat right bottom, url("@/assets/images/home/road.svg") no-repeat center center, #010010;
+  background: url("@/assets/images/touch/home/shadow.svg") no-repeat right bottom, url("@/assets/images/touch/home/road.svg") no-repeat center center, #010010;
   mix-blend-mode: normal;
 
   .highlight {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    width: 1232px;
+    height: 1232px;
+    left: calc(100vw / 2 - 616px);
     background: linear-gradient(146.36deg, #00B3FF 9.3%, #0A1ED7 96.42%);
     opacity: 0.35;
     box-shadow: inset 14px 24px 40px rgba(78, 184, 255, 0.59);

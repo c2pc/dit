@@ -1,10 +1,13 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import Home from '@/views/Home.vue'
-import Management from '@/views/Management.vue'
-import Video from "@/views/Video.vue";
-import Business from "@/views/Business.vue";
-import Resident from "@/views/Resident.vue";
-import MoscowInNumbers from "@/views/management/MoscowInNumbers.vue";
+import HomeTouch from '@/views/touch/Home.vue'
+import HomeFull from '@/views/full/Home.vue'
+import ManagementTouch from '@/views/touch/Management.vue'
+import ManagementFull from '@/views/full/Management.vue'
+import Video from "@/views/touch/Video.vue";
+import Business from "@/views/touch/Business.vue";
+import Resident from "@/views/touch/Resident.vue";
+import MoscowInNumbers from "@/views/touch/management/MoscowInNumbers.vue";
+import responsiveRoute from "@/helpers/responsiveRoute";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,12 +15,18 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: Home
+            component: responsiveRoute({
+                lg: () => HomeTouch,
+                xl: () => HomeFull
+            })
         },
         {
             path: '/management',
             name: 'management',
-            component: Management
+            component: responsiveRoute({
+                lg: () => ManagementTouch,
+                xl: () => ManagementFull
+            })
         },
         {
             path: '/management/moscow_in_numbers',

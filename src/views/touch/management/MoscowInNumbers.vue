@@ -22,21 +22,21 @@
 
 import Back from "@/components/back.vue";
 import Block from "@/components/block.vue";
-import BusinessIcon from "@/assets/images/management/moscow_in_numbers/business.svg";
-import CultureIcon from "@/assets/images/management/moscow_in_numbers/culture.svg";
-import DynamicIcon from "@/assets/images/management/moscow_in_numbers/dinamic.svg";
-import ExportIcon from "@/assets/images/management/moscow_in_numbers/export.svg";
-import IndustryIcon from "@/assets/images/management/moscow_in_numbers/industry.svg";
-import InnovationIcon from "@/assets/images/management/moscow_in_numbers/innovation.svg";
-import IntelligenceIcon from "@/assets/images/management/moscow_in_numbers/intelligence.svg";
-import InvestorsIcon from "@/assets/images/management/moscow_in_numbers/investors.svg";
-import RatingIcon from "@/assets/images/management/moscow_in_numbers/rating.svg";
-import RealStateIcon from "@/assets/images/management/moscow_in_numbers/real_state.svg";
-import RenovationIcon from "@/assets/images/management/moscow_in_numbers/renovation.svg";
-import StaffIcon from "@/assets/images/management/moscow_in_numbers/staff.svg";
-import TechnoParkIcon from "@/assets/images/management/moscow_in_numbers/technopark.svg";
-import VolunteersIcon from "@/assets/images/management/moscow_in_numbers/volunteers.svg";
-import YoungPeopleIcon from "@/assets/images/management/moscow_in_numbers/young_people.svg";
+import BusinessIcon from "@/assets/images/touch/management/moscow_in_numbers/business.svg";
+import CultureIcon from "@/assets/images/touch/management/moscow_in_numbers/culture.svg";
+import DynamicIcon from "@/assets/images/touch/management/moscow_in_numbers/dinamic.svg";
+import ExportIcon from "@/assets/images/touch/management/moscow_in_numbers/export.svg";
+import IndustryIcon from "@/assets/images/touch/management/moscow_in_numbers/industry.svg";
+import InnovationIcon from "@/assets/images/touch/management/moscow_in_numbers/innovation.svg";
+import IntelligenceIcon from "@/assets/images/touch/management/moscow_in_numbers/intelligence.svg";
+import InvestorsIcon from "@/assets/images/touch/management/moscow_in_numbers/investors.svg";
+import RatingIcon from "@/assets/images/touch/management/moscow_in_numbers/rating.svg";
+import RealStateIcon from "@/assets/images/touch/management/moscow_in_numbers/real_state.svg";
+import RenovationIcon from "@/assets/images/touch/management/moscow_in_numbers/renovation.svg";
+import StaffIcon from "@/assets/images/touch/management/moscow_in_numbers/staff.svg";
+import TechnoParkIcon from "@/assets/images/touch/management/moscow_in_numbers/technopark.svg";
+import VolunteersIcon from "@/assets/images/touch/management/moscow_in_numbers/volunteers.svg";
+import YoungPeopleIcon from "@/assets/images/touch/management/moscow_in_numbers/young_people.svg";
 import router from "@/router";
 
 type Block = {
@@ -148,7 +148,7 @@ const blocks: Block[] = [
   max-height: 1080px;
   min-height: 100vh;
 
-  background: url("@/assets/images/management/moscow_in_numbers/bg.png") no-repeat center center;
+  background: url("@/assets/images/touch/management/moscow_in_numbers/bg.png") no-repeat center center;
   mix-blend-mode: normal;
   padding: 156px 140px;
 

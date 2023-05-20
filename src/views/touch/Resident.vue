@@ -23,13 +23,13 @@ import Back from "@/components/back.vue";
 import Block from "@/components/block.vue";
 import BlockImage from "@/components/block-image.vue";
 import BlockButton from "@/components/block-button.vue";
-import BooksIcon from "@/assets/images/resident/books.svg";
-import BuildingIcon from "@/assets/images/resident/building.svg";
-import FridgeIcon from "@/assets/images/resident/fridge.svg";
-import HandIcon from "@/assets/images/resident/hand.svg";
-import MoscowIcon from "@/assets/images/resident/moscow.svg";
-import PlaneIcon from "@/assets/images/resident/plane.svg";
-import RelocationIcon from "@/assets/images/resident/relocation.svg";
+import BooksIcon from "@/assets/images/touch/resident/books.svg";
+import BuildingIcon from "@/assets/images/touch/resident/building.svg";
+import FridgeIcon from "@/assets/images/touch/resident/fridge.svg";
+import HandIcon from "@/assets/images/touch/resident/hand.svg";
+import MoscowIcon from "@/assets/images/touch/resident/moscow.svg";
+import PlaneIcon from "@/assets/images/touch/resident/plane.svg";
+import RelocationIcon from "@/assets/images/touch/resident/relocation.svg";
 import router from "@/router";
 
 type Block = {
@@ -101,7 +101,7 @@ const blocks: Block[] = [
   max-height: 1080px;
   min-height: 100vh;
 
-  background: url("@/assets/images/resident/bg.png") no-repeat center center;
+  background: url("@/assets/images/touch/resident/bg.png") no-repeat center center;
   mix-blend-mode: normal;
   padding: 156px 140px;
 
