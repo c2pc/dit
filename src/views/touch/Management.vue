@@ -106,7 +106,7 @@ const elements: Element[] = [
   max-height: 1080px;
   min-height: 100vh;
 
-  background: url("@/assets/images/touch/management/shadow.svg") no-repeat left bottom, url("@/assets/images/management/road.svg") no-repeat center center, #010010;
+  background: url("@/assets/images/touch/management/shadow.svg") no-repeat left bottom, url("@/assets/images/touch/management/road.svg") no-repeat center center, #010010;
   mix-blend-mode: normal;
 
   .back-button {
