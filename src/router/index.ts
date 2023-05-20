@@ -6,7 +6,8 @@ import ManagementFull from '@/views/full/Management.vue'
 import Video from "@/views/touch/Video.vue";
 import Business from "@/views/touch/Business.vue";
 import Resident from "@/views/touch/Resident.vue";
-import MoscowInNumbers from "@/views/touch/management/MoscowInNumbers.vue";
+import MoscowInNumbersTouch from "@/views/touch/management/MoscowInNumbers.vue";
+import MoscowInNumbersFull from "@/views/full/management/MoscowInNumbers.vue";
 import responsiveRoute from "@/helpers/responsiveRoute";
 
 const router = createRouter({
@@ -31,7 +32,10 @@ const router = createRouter({
         {
             path: '/management/moscow_in_numbers',
             name: 'moscow_in_numbers',
-            component: MoscowInNumbers
+            component: responsiveRoute({
+                lg: () => MoscowInNumbersTouch,
+                xl: () => MoscowInNumbersFull
+            })
         },
         {
             path: '/video',
