@@ -1,4 +1,5 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
+import { io } from 'socket.io-client';
 import Video from "@/views/touch/Video.vue";
 import Business from "@/views/touch/Business.vue";
 import Resident from "@/views/touch/Resident.vue";
@@ -47,6 +48,18 @@ const router = createRouter({
             component: Resident
         },
     ]
-})
+});
 
-export default router
+const socket = io('http://localhost:8080'); // Замените URL на ваш серверный адрес
+
+// Обработчик события изменения маршрута на сервере
+socket.on('routeChange', (route) => {
+    router.push(route);
+});
+
+// Обработчик события изменения маршрута на клиенте
+router.afterEach((to) => {
+    socket.emit('pageTransition', to.fullPath);
+});
+
+export default router;

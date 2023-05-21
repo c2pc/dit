@@ -12,36 +12,40 @@
     </div>
 </template>
 
-<script lang="ts" setup>
-
+<script setup lang="ts">
+import { computed, defineProps } from "vue";
 import router from "@/router";
-import {computed} from "vue";
+
 
 const props = defineProps<{
     type: string;
     onClick?: () => any;
     position?: string;
     showDescription?: boolean;
-}>()
+}>();
+
+
+
+
+
+const click = () => {
+    if (props.onClick != undefined) {
+        props.onClick();
+    } else {
+        router.back();
+    }
+};
 
 const margin = computed(() => {
     switch (props.position) {
         case "left":
-            return {'margin-left': "-29px"}
+            return { "margin-left": "-29px" };
         case "right":
-            return {'margin-right': "-29px"}
+            return { "margin-right": "-29px" };
         case "center":
-            return {}
+            return {};
     }
-})
-
-const click = () => {
-    if (props.onClick != undefined) {
-        props.onClick()
-    } else {
-        router.back()
-    }
-}
+});
 </script>
 
 <style lang="scss" scoped>
