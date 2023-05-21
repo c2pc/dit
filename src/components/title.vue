@@ -3,12 +3,14 @@
 </template>
 
 <script lang="ts" setup>
+
 const props = defineProps<{
     title: string;
 }>()
 </script>
 
 <style lang="scss" scoped>
+
 .title {
   font-family: 'Golos UI VF';
   font-style: normal;
