@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
 });
 
 // Запустить сервер
-const port = 8080; // Укажите порт по вашему усмотрению
+const port = 8080;
 server.listen(port, () => {
 	console.log(`Сервер запущен на порту ${port}`);
 });
