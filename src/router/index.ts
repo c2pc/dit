@@ -1,13 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import HomeTouch from '@/views/touch/Home.vue'
-import HomeFull from '@/views/full/Home.vue'
-import ManagementTouch from '@/views/touch/Management.vue'
-import ManagementFull from '@/views/full/Management.vue'
 import Video from "@/views/touch/Video.vue";
 import Business from "@/views/touch/Business.vue";
 import Resident from "@/views/touch/Resident.vue";
-import MoscowInNumbersTouch from "@/views/touch/management/MoscowInNumbers.vue";
-import MoscowInNumbersFull from "@/views/full/management/MoscowInNumbers.vue";
 import responsiveRoute from "@/helpers/responsiveRoute";
 
 const router = createRouter({
@@ -17,24 +11,24 @@ const router = createRouter({
             path: '/',
             name: 'home',
             component: responsiveRoute({
-                lg: () => HomeTouch,
-                xl: () => HomeFull
+                lg: () => import('./views/HomeTouch.vue'),
+                xl: () => import('./views/HomeFull.vue')
             })
         },
         {
             path: '/management',
             name: 'management',
             component: responsiveRoute({
-                lg: () => ManagementTouch,
-                xl: () => ManagementFull
+                lg: () => import('./views/ManagementTouch.vue'),
+                xl: () => import('./views/ManagementFull.vue')
             })
         },
         {
             path: '/management/moscow_in_numbers',
             name: 'moscow_in_numbers',
             component: responsiveRoute({
-                lg: () => MoscowInNumbersTouch,
-                xl: () => MoscowInNumbersFull
+                lg: () => import('./views/MoscowInNumbersTouch.vue'),
+                xl: () => import('./views/MoscowInNumbersFull.vue')
             })
         },
         {
