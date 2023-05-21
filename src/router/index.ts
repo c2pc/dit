@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { io } from 'socket.io-client';
+
 import Video from "@/views/touch/Video.vue";
 import Business from "@/views/touch/Business.vue";
 import Resident from "@/views/touch/Resident.vue";
@@ -50,11 +51,11 @@ const router = createRouter({
     ]
 });
 
-const socket = io('http://localhost:8080'); // Замените URL на ваш серверный адрес
+const socket = io('/socket.io');
 
 // Обработчик события изменения маршрута на сервере
-socket.on('routeChange', (route) => {
-    router.push(route);
+socket.on('pageTransition', (nextPage) => {
+    router.push(nextPage);
 });
 
 // Обработчик события изменения маршрута на клиенте

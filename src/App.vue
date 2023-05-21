@@ -3,15 +3,31 @@
 </template>
 
 <script setup lang="ts">
-import { io } from "socket.io-client";
-import { onMounted } from "vue";
+import { onMounted, watchEffect } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-const socket = io("http://localhost:8080"); // Замените на адрес вашего сервера
+// Импортируйте socket из модуля main.ts
+import { socket } from "@/main";
+
+const route = useRoute();
+const router = useRouter();
 
 onMounted(() => {
-    // При переходе на новую страницу
-    const nextPage = "new_page";
-    socket.emit("pageTransition", nextPage);
+    console.log('Клиент подключился');
+    socket.emit("pageTransition", route.fullPath);
+});
+
+watchEffect(() => {
+    console.log('Изменение маршрута:', route.fullPath);
+    socket.emit("pageTransition", route.fullPath);
+});
+
+socket.on('pageTransition', (nextPage) => {
+    console.log('Получено изменение маршрута:', nextPage);
+    // Обновляем маршрут только если он отличается от текущего
+    if (router.currentRoute.value.fullPath !== nextPage) {
+        router.push(nextPage);
+    }
 });
 </script>
 

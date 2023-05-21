@@ -1,4 +1,4 @@
-import {fileURLToPath, URL} from 'node:url'
+import { URL } from 'url';
 
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -10,8 +10,16 @@ export default defineConfig({
     plugins: [vue()],
     resolve: {
         alias: {
-            // @ts-ignore
-            '@': fileURLToPath(new URL('./src', import.meta.url))
-        }
-    }
+            '@': new URL('./src', import.meta.url).pathname,
+        },
+    },
+    server: {
+        proxy: {
+            '/socket.io': {
+                target: 'http://localhost:8080',
+                changeOrigin: true,
+                ws: true,
+            },
+        },
+    },
 })
