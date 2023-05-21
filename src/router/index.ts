@@ -11,24 +11,24 @@ const router = createRouter({
             path: '/',
             name: 'home',
             component: responsiveRoute({
-                lg: () => import('./views/HomeTouch.vue'),
-                xl: () => import('./views/HomeFull.vue')
+                lg: () => import('@/views/touch/Home.vue'),
+                xl: () => import('@/views/full/Home.vue')
             })
         },
         {
             path: '/management',
             name: 'management',
             component: responsiveRoute({
-                lg: () => import('./views/ManagementTouch.vue'),
-                xl: () => import('./views/ManagementFull.vue')
+                lg: () => import('@/views/touch/Management.vue'),
+                xl: () => import('@/views/full/Management.vue')
             })
         },
         {
             path: '/management/moscow_in_numbers',
             name: 'moscow_in_numbers',
             component: responsiveRoute({
-                lg: () => import('./views/MoscowInNumbersTouch.vue'),
-                xl: () => import('./views/MoscowInNumbersFull.vue')
+                lg: () => import('@/views/touch/management/MoscowInNumbers.vue'),
+                xl: () => import('@/views/full/management/MoscowInNumbers.vue')
             })
         },
         {
