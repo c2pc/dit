@@ -1,8 +1,7 @@
 <template>
     <div class="content moscow-in-numbers">
-        <div class="back-button">
-            <back position="left" type="white"/>
-        </div>
+        <back :show-description="false" class="back-button" type="white"/>
+        <Title class="title-button" title="Технологии для управления"/>
         <div class="elements">
             <block v-for="block in blocks" :disabled="true" :style="{width: `calc(100%/${block.width} - 14px)`}"
                    class="element">
@@ -37,7 +36,9 @@ import StaffIcon from "@/assets/images/touch/management/moscow_in_numbers/staff.
 import TechnoParkIcon from "@/assets/images/touch/management/moscow_in_numbers/technopark.svg";
 import VolunteersIcon from "@/assets/images/touch/management/moscow_in_numbers/volunteers.svg";
 import YoungPeopleIcon from "@/assets/images/touch/management/moscow_in_numbers/young_people.svg";
+import TouristIcon from "@/assets/images/touch/management/moscow_in_numbers/tourist.svg";
 import router from "@/router";
+import Title from "@/components/title.vue";
 
 type Block = {
     width: number;
@@ -103,39 +104,45 @@ const blocks: Block[] = [
     },
     {
         title: "Молодежь Москвы",
-        width: 6,
+        width: 7,
         defaultIcon: YoungPeopleIcon,
         onClick: () => router.push("/management/moscow_in_numbers/business"),
     },
     {
         title: "Развитие технопарков",
-        width: 6,
+        width: 7,
         defaultIcon: TechnoParkIcon,
         onClick: () => router.push("/management/moscow_in_numbers/business"),
     },
     {
         title: "Общие сведения об экспорте",
-        width: 6,
+        width: 7,
         defaultIcon: ExportIcon,
         onClick: () => router.push("/management/moscow_in_numbers/business"),
     },
     {
         title: "Программа реновации Москвы",
-        width: 6,
+        width: 7,
         defaultIcon: RenovationIcon,
         onClick: () => router.push("/management/moscow_in_numbers/business"),
     },
     {
         title: "Волонтерская деятельность в Москве",
-        width: 6,
+        width: 7,
         defaultIcon: VolunteersIcon,
         onClick: () => router.push("/management/moscow_in_numbers/business"),
     },
     {
         title: "Инновационное развитие",
-        width: 6,
+        width: 7,
         defaultIcon: InnovationIcon,
         onClick: () => router.push("/management/moscow_in_numbers/business"),
+    },
+    {
+        title: "Туристический поток",
+        width: 7,
+        defaultIcon: TouristIcon,
+        onClick: () => router.push("/management/moscow_in_numbers/tourist"),
     },
 ]
 </script>
@@ -150,13 +157,30 @@ const blocks: Block[] = [
 
   background: url("@/assets/images/touch/management/moscow_in_numbers/bg.png") no-repeat center center;
   mix-blend-mode: normal;
-  padding: 156px 140px;
+  padding: 243px 201px 20px 201px;
 
+    .back-button {
+        position: absolute;
+        z-index: 2;
+        left: 120px;
+        top: 135px;
+    }
+
+    .title-button {
+        position: absolute;
+        z-index: 2;
+        right: 120px;
+        top: 156px;
+
+        font-size: 24px;
+        line-height: 29px;
+        text-shadow: none;
+    }
 
   .elements {
     display: flex;
     flex-wrap: wrap;
-    margin: 57px -7px 0 -7px;
+    margin: 0 -7px 0 -7px;
 
     .element {
       height: 230px;

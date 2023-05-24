@@ -1,7 +1,8 @@
 <template>
-    <div class="content home">
+    <div class="content management">
         <div class="highlight"></div>
         <div class="content-2560">
+            <Title class="title-button" title="Технологии для управления"/>
             <div class="elements">
                 <div v-for="el in elements" :style="{...el.position}" class="element">
                     <touch
@@ -15,6 +16,7 @@
                             :onClick="el.onClick"
                             :tooltipIcon="el.tooltipIcon"
                             :tooltipPosition="el.tooltipPosition"
+                            :disabled="true"
                     />
                 </div>
             </div>
@@ -27,7 +29,7 @@
                             :defaultIcon="el.defaultIcon"
                             :defaultIconStyle="el.defaultIconStyle"
                             :description="el.description"
-                            :disabled="el.disabled"
+                            :disabled="true"
                             :header="el.header"
                             :hoverIcon="el.hoverIcon"
                             :hoverIconStyle="el.hoverIconStyle"
@@ -59,6 +61,7 @@ import MoshubHover from "@/assets/images/full/management/moshub-hover.png";
 import CodeIcon from "@/assets/images/full/management/code.svg";
 import CubeDefault from "@/assets/images/full/management/cube-default.svg";
 import DiagramDefault from "@/assets/images/full/management/diagram-default.svg";
+import Title from "@/components/title.vue";
 
 const elements: Element[] = [
     {
@@ -66,7 +69,7 @@ const elements: Element[] = [
         position: {top: "-106px", left: "1200px"},
         defaultIcon: DigitalTwinDefault,
         hoverIcon: DigitalTwinHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "",
         header: "Цифровой двойник",
         onClick: () => router.push("/digital_twin"),
         tooltipPosition: {top: "150px", left: "-283px"},
@@ -79,7 +82,7 @@ const elements: Element[] = [
         position: {top: "348px", left: "504px"},
         defaultIcon: DigitalTwinMetaDefault,
         hoverIcon: DigitalTwinMetaHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "",
         header: "Цифровой двойник (Мета-версия)",
         onClick: () => router.push("/digital_twin_meta"),
         tooltipPosition: {top: "-205px", left: "370px"},
@@ -92,7 +95,7 @@ const elements: Element[] = [
         position: {top: "195px", left: "1676px"},
         defaultIcon: MoscowInNumbersDefault,
         hoverIcon: MoscowInNumbersHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "",
         header: "Москва в цифрах",
         onClick: () => router.push("/management/moscow_in_numbers"),
         tooltipPosition: {top: "-115px", left: "62px"},
@@ -105,7 +108,7 @@ const elements: Element[] = [
         position: {top: "625px", left: "1060px"},
         defaultIcon: MoshubDefault,
         hoverIcon: MoshubHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "",
         header: "mos.hub",
         onClick: () => router.push("/moshub"),
         tooltipPosition: {top: "-125px", left: "460px"},
@@ -147,7 +150,7 @@ const elements2: Element[] = [
 </script>
 
 <style lang="scss" scoped>
-.content.home {
+.content.management {
   position: relative;
   max-width: 3584px;
   min-width: 100vw;
@@ -160,6 +163,13 @@ const elements2: Element[] = [
   .content-2560 {
     width: 2560px;
     background: url("@/assets/images/full/management/road-2560.svg") no-repeat right bottom;
+
+      .title-button {
+          position: absolute;
+          z-index: 2;
+          left: 522px;
+          top: 103px;
+      }
   }
 
   .content-1024 {

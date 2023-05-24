@@ -1,8 +1,7 @@
 <template>
     <div class="content video">
-        <div class="back-button">
-            <back :show-description="true" type="white"/>
-        </div>
+        <back :show-description="true" class="back-button" type="white"/>
+        <Title class="title-button" title="Видео"/>
         <div class="highlight"></div>
         <div class="elements">
             <div v-for="el in elements" :style="{...el.position}" class="element">
@@ -26,6 +25,7 @@
 
 <script lang="ts" setup>
 import Touch from "@/components/touch.vue";
+import Title from "@/components/title.vue";
 import {Element} from "@/types/element";
 import router from "@/router";
 import ManagementDefault from "@/assets/images/touch/home/management-default.png";
@@ -114,6 +114,17 @@ const elements: Element[] = [
     z-index: 2;
     left: 120px;
     top: 135px;
+  }
+
+  .title-button {
+    position: absolute;
+    z-index: 2;
+    right: 120px;
+    top: 156px;
+
+    font-size: 24px;
+    line-height: 29px;
+    text-shadow: none;
   }
 
   .highlight {

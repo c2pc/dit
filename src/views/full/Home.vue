@@ -15,6 +15,7 @@
                             :onClick="el.onClick"
                             :tooltipIcon="el.tooltipIcon"
                             :tooltipPosition="el.tooltipPosition"
+                            :disabled="true"
                     />
                 </div>
             </div>
@@ -27,7 +28,7 @@
                             :defaultIcon="el.defaultIcon"
                             :defaultIconStyle="el.defaultIconStyle"
                             :description="el.description"
-                            :disabled="el.disabled"
+                            :disabled="true"
                             :header="el.header"
                             :hoverIcon="el.hoverIcon"
                             :hoverIconStyle="el.hoverIconStyle"
@@ -66,7 +67,7 @@ const elements: Element[] = [
         position: {top: "520px", left: "948px"},
         defaultIcon: ManagementDefault,
         hoverIcon: ManagementHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "",
         header: "Технологии для управления",
         onClick: () => router.push("/management"),
         tooltipPosition: {top: "-150px", left: "-150px"},
@@ -79,7 +80,7 @@ const elements: Element[] = [
         position: {top: "-12px", left: "235px"},
         defaultIcon: BusinessDefault,
         hoverIcon: BusinessHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "",
         header: "Технологии для бизнеса",
         onClick: () => router.push("/business"),
         tooltipPosition: {top: "55px", left: "25px"},
@@ -92,7 +93,7 @@ const elements: Element[] = [
         position: {top: "4px", left: "1135px"},
         defaultIcon: VideoDefault,
         hoverIcon: VideoHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "",
         header: "Цифровая Москва",
         onClick: () => router.push("/video"),
         tooltipPosition: {top: "12px", left: "-345px"},
@@ -105,7 +106,7 @@ const elements: Element[] = [
         position: {top: "95px", left: "1535px"},
         defaultIcon: ResidentsDefault,
         hoverIcon: ResidentsHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "",
         header: "Технологии для жителей",
         onClick: () => router.push("/residents"),
         tooltipPosition: {top: "-38px", left: "-56px"},

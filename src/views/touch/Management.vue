@@ -1,8 +1,7 @@
 <template>
     <div class="content management">
-        <div class="back-button">
-            <back type="white"/>
-        </div>
+        <back :show-description="false" class="back-button" type="white"/>
+        <Title class="title-button" title="Технологии для управления"/>
         <div class="highlight"></div>
         <div class="elements">
             <div v-for="el in elements" :style="{...el.position}" class="element">
@@ -40,6 +39,7 @@ import ListNumbersIcon from "@/assets/images/touch/management/listNumbers.svg";
 import MoshubDefault from "@/assets/images/touch/management/moshub-default.png";
 import MoshubHover from "@/assets/images/touch/management/moshub-hover.png";
 import CodeIcon from "@/assets/images/touch/management/code.svg";
+import Title from "@/components/title.vue";
 
 const elements: Element[] = [
     {
@@ -47,7 +47,7 @@ const elements: Element[] = [
         position: {top: "-106px", left: "662px"},
         defaultIcon: DigitalTwinDefault,
         hoverIcon: DigitalTwinHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "Уникальная платформа, которая помогает руководству столицы принимать управленческие решения и контролировать ход реализации значимых городских проектов. В основе Цифрового двойника города – фотограмметрическая модель (точная 3D-копия в виртуальной реальности) Москвы, на которую нанесены все сети инженерных и транспортных коммуникаций.",
         header: "Цифровой двойник",
         onClick: () => router.push("/digital_twin"),
         tooltipPosition: {top: "150px", left: "-283px"},
@@ -60,8 +60,8 @@ const elements: Element[] = [
         position: {top: "348px", left: "-37px"},
         defaultIcon: DigitalTwinMetaDefault,
         hoverIcon: DigitalTwinMetaHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
-        header: "Цифровой двойник (Мета-версия)",
+        description: "В рамках развития Цифрового двойника города была создана высококачественная многофункциональная цифровая 3D-модель Москвы на базе современного игрового движка. Благодаря этому удалось получить принципиально новое качество изображения зданий и городских объектов, а также ускорить все технические процессы (загрузка, просмотр объектов, операции с пространственными данными) в два раза. В перспективе именно эта версия Цифрового двойника будет использоваться при принятии управленческих решений.",
+        header: "ЦИФРОВОЙ ДВОЙНИК 3.0",
         onClick: () => router.push("/digital_twin_meta"),
         tooltipPosition: {top: "-205px", left: "370px"},
         tooltipIcon: GlobeHemisphereWestIcon,
@@ -73,7 +73,7 @@ const elements: Element[] = [
         position: {top: "195px", left: "1138px"},
         defaultIcon: MoscowInNumbersDefault,
         hoverIcon: MoscowInNumbersHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "Ключевые показатели отраслевого развития Москвы.",
         header: "Москва в цифрах",
         onClick: () => router.push("/management/moscow_in_numbers"),
         tooltipPosition: {top: "-115px", left: "62px"},
@@ -86,7 +86,7 @@ const elements: Element[] = [
         position: {top: "625px", left: "523px"},
         defaultIcon: MoshubDefault,
         hoverIcon: MoshubHover,
-        description: "Задача организации, в особенности же курс на социально-ориентированный национальный проект не оставляет шанса для направлений прогрессивного развития.",
+        description: "Модернизированный городской репозиторий программного обеспечения, в котором хранится исходный код городских сервисов, информационных систем и отраслевых платформ. Mos.Hub будет открыт для всего российского отраслевого сообщества. Разработчики смогут хранить в нем свой код, переиспользовать отдельные элементы городских ИТ-проектов для создания собственных решений и пользоваться дополнительными полезными функциями.",
         header: "mos.hub",
         onClick: () => router.push("/moshub"),
         tooltipPosition: {top: "-125px", left: "460px"},
@@ -114,6 +114,17 @@ const elements: Element[] = [
     z-index: 2;
     left: 120px;
     top: 135px;
+  }
+
+  .title-button {
+    position: absolute;
+    z-index: 2;
+    right: 120px;
+    top: 156px;
+
+    font-size: 24px;
+    line-height: 29px;
+    text-shadow: none;
   }
 
   .highlight {

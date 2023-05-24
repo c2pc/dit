@@ -24,10 +24,6 @@ const props = defineProps<{
     showDescription?: boolean;
 }>();
 
-
-
-
-
 const click = () => {
     if (props.onClick != undefined) {
         props.onClick();

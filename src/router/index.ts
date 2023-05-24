@@ -1,7 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import { io } from 'socket.io-client';
-
-import Video from "@/views/touch/Video.vue";
+import {createRouter, createWebHistory} from 'vue-router';
+import {io} from 'socket.io-client';
 import Business from "@/views/touch/Business.vue";
 import Resident from "@/views/touch/Resident.vue";
 import responsiveRoute from "@/helpers/responsiveRoute";
@@ -18,14 +16,6 @@ const router = createRouter({
             })
         },
         {
-            path: '/management',
-            name: 'management',
-            component: responsiveRoute({
-                lg: () => import('@/views/touch/Management.vue'),
-                xl: () => import('@/views/full/Management.vue')
-            })
-        },
-        {
             path: '/management/moscow_in_numbers',
             name: 'moscow_in_numbers',
             component: responsiveRoute({
@@ -34,9 +24,20 @@ const router = createRouter({
             })
         },
         {
+            path: '/management',
+            name: 'management',
+            component: responsiveRoute({
+                lg: () => import('@/views/touch/Management.vue'),
+                xl: () => import('@/views/full/Management.vue')
+            })
+        },
+        {
             path: '/video',
             name: 'video',
-            component: Video
+            component: responsiveRoute({
+                lg: () => import('@/views/touch/Video.vue'),
+                xl: () => import('@/views/full/Video.vue')
+            })
         },
         {
             path: '/business',
@@ -46,7 +47,10 @@ const router = createRouter({
         {
             path: '/residents',
             name: 'residents',
-            component: Resident
+            component: responsiveRoute({
+                lg: () => import('@/views/touch/Resident.vue'),
+                xl: () => import('@/views/full/Resident.vue')
+            })
         },
     ]
 });

@@ -22,7 +22,7 @@ const props = defineProps<{
 <style lang="scss" scoped>
 .tooltip {
   width: 653px;
-  min-height: 300px;
+  min-height: 260px;
   background: linear-gradient(90deg, rgba(42, 177, 254, 0.3) 0%, rgba(5, 108, 236, 0.3) 39.75%, rgba(11, 55, 222, 0.3) 97.91%);
   backdrop-filter: blur(10px);
   border-radius: 10px;
