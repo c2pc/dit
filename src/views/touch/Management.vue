@@ -40,6 +40,7 @@ import MoshubDefault from "@/assets/images/touch/management/moshub-default.png";
 import MoshubHover from "@/assets/images/touch/management/moshub-hover.png";
 import CodeIcon from "@/assets/images/touch/management/code.svg";
 import Title from "@/components/title.vue";
+import {socket} from "@/main";
 
 const elements: Element[] = [
     {
@@ -49,7 +50,7 @@ const elements: Element[] = [
         hoverIcon: DigitalTwinHover,
         description: "Уникальная платформа, которая помогает руководству столицы принимать управленческие решения и контролировать ход реализации значимых городских проектов. В основе Цифрового двойника города – фотограмметрическая модель (точная 3D-копия в виртуальной реальности) Москвы, на которую нанесены все сети инженерных и транспортных коммуникаций.",
         header: "Цифровой двойник",
-        onClick: () => router.push("/digital_twin"),
+        onClick: () => socket.emit("pageTransition", "/management/digital_twin"),
         tooltipPosition: {top: "150px", left: "-283px"},
         tooltipIcon: MapTrifold,
         defaultIconStyle: {width: "1031px", height: "629px"},
@@ -62,7 +63,7 @@ const elements: Element[] = [
         hoverIcon: DigitalTwinMetaHover,
         description: "В рамках развития Цифрового двойника города была создана высококачественная многофункциональная цифровая 3D-модель Москвы на базе современного игрового движка. Благодаря этому удалось получить принципиально новое качество изображения зданий и городских объектов, а также ускорить все технические процессы (загрузка, просмотр объектов, операции с пространственными данными) в два раза. В перспективе именно эта версия Цифрового двойника будет использоваться при принятии управленческих решений.",
         header: "ЦИФРОВОЙ ДВОЙНИК 3.0",
-        onClick: () => router.push("/digital_twin_meta"),
+        onClick: () => socket.emit("pageTransition", "/management/digital_twin_meta"),
         tooltipPosition: {top: "-205px", left: "370px"},
         tooltipIcon: GlobeHemisphereWestIcon,
         defaultIconStyle: {width: "762px", height: "589px"},
@@ -88,7 +89,7 @@ const elements: Element[] = [
         hoverIcon: MoshubHover,
         description: "Модернизированный городской репозиторий программного обеспечения, в котором хранится исходный код городских сервисов, информационных систем и отраслевых платформ. Mos.Hub будет открыт для всего российского отраслевого сообщества. Разработчики смогут хранить в нем свой код, переиспользовать отдельные элементы городских ИТ-проектов для создания собственных решений и пользоваться дополнительными полезными функциями.",
         header: "mos.hub",
-        onClick: () => router.push("/moshub"),
+        onClick: () => router.push("/management/moshub"),
         tooltipPosition: {top: "-125px", left: "460px"},
         tooltipIcon: CodeIcon,
         defaultIconStyle: {width: "825px", height: "569px"},

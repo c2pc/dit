@@ -13,10 +13,6 @@ app.use(router);
 
 const socket = io();
 
-socket.on('pageTransition', (nextPage) => {
-    router.push(nextPage);
-});
-
 app.config.globalProperties.$socket = socket;
 
 app.mount('#app');

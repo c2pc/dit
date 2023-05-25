@@ -1,19 +1,39 @@
 <template>
     <div class="content business">
-        IFRAME
+        <back :show-description="false" class="back-button" type="blue-filled"/>
+        <iframe
+                class="iframe"
+                height="100%"
+                src="https://investmoscow.ru/about-moscow/investment-map-v2?mainType=1"
+                width="100%"
+        ></iframe>
     </div>
 </template>
 
 <script lang="ts" setup>
 
+import Back from "@/components/back.vue";
 </script>
 
 <style lang="scss" scoped>
-.content.video {
+.content {
   position: relative;
   max-width: 1920px;
   min-width: 100vw;
   max-height: 1080px;
   min-height: 100vh;
+
+  .iframe {
+    height: 100vh;
+    width: 100vw;
+  }
+
+
+  .back-button {
+    position: absolute;
+    z-index: 100;
+    left: 1612px;
+    top: 135px;
+  }
 }
 </style>

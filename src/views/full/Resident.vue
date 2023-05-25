@@ -57,7 +57,7 @@ const blocks: Block[] = [
         onClick: () => {},
     },
     {
-        title: "СЕРВИС ВЫВОЗ НЕНУЖНЫХ ВЕЩЕЙ",
+        title: "СЕРВИС «ВЫВОЗ НЕНУЖНЫХ ВЕЩЕЙ»",
         class: "short",
         defaultIcon: FridgeIcon,
         description: "",
@@ -71,7 +71,7 @@ const blocks: Block[] = [
         onClick: () => {},
     },
     {
-        title: "Севрис \"Вместе с культурой\"",
+        title: "Сервис краткосрочной аренды \"Вместе с культурой\"",
         class: "long",
         defaultIcon: BuildingIcon,
         description: "",

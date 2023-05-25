@@ -56,7 +56,7 @@ const blocks: Block[] = [
         onClick: () => router.push("/resident/russpass"),
     },
     {
-        title: "СЕРВИС ВЫВОЗ НЕНУЖНЫХ ВЕЩЕЙ»",
+        title: "СЕРВИС «ВЫВОЗ НЕНУЖНЫХ ВЕЩЕЙ»",
         class: "short",
         defaultIcon: FridgeIcon,
         description: "Сервис позволяет экологично избавиться от ненужной бытовой техники, мебели и других крупногабаритных предметов.",
@@ -70,7 +70,7 @@ const blocks: Block[] = [
         onClick: () => router.push("/resident/russpass"),
     },
     {
-        title: "Севрис \"Вместе с культурой\"",
+        title: "Сервис краткосрочной аренды \"Вместе с культурой\"",
         class: "long",
         defaultIcon: BuildingIcon,
         description: "Первый в России сервис, который позволяет горожанам арендовать помещения для проведения частных мероприятий в культурных учреждениях Москвы.",

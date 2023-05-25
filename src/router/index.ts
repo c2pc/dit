@@ -1,7 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import {io} from 'socket.io-client';
-import Business from "@/views/touch/Business.vue";
-import Resident from "@/views/touch/Resident.vue";
 import responsiveRoute from "@/helpers/responsiveRoute";
 
 const router = createRouter({
@@ -16,6 +14,14 @@ const router = createRouter({
             })
         },
         {
+            path: '/management',
+            name: 'management',
+            component: responsiveRoute({
+                lg: () => import('@/views/touch/Management.vue'),
+                xl: () => import('@/views/full/Management.vue')
+            })
+        },
+        {
             path: '/management/moscow_in_numbers',
             name: 'moscow_in_numbers',
             component: responsiveRoute({
@@ -24,11 +30,18 @@ const router = createRouter({
             })
         },
         {
-            path: '/management',
-            name: 'management',
+            path: '/management/digital_twin',
+            name: 'digital_twin',
             component: responsiveRoute({
-                lg: () => import('@/views/touch/Management.vue'),
-                xl: () => import('@/views/full/Management.vue')
+                xl: () => import('@/views/full/management/DigitalTwin.vue')
+            })
+        },
+        {
+            path: '/management/moshub',
+            name: 'moshub',
+            component: responsiveRoute({
+                lg: () => import('@/views/touch/management/MosHub.vue'),
+                xl: () => import('@/views/full/management/MosHub.vue')
             })
         },
         {
@@ -42,7 +55,10 @@ const router = createRouter({
         {
             path: '/business',
             name: 'business',
-            component: Business
+            component: responsiveRoute({
+                lg: () => import('@/views/touch/Business.vue'),
+                xl: () => import('@/views/full/Business.vue')
+            }),
         },
         {
             path: '/residents',
