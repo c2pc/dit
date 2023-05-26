@@ -59,7 +59,6 @@ const props = defineProps<{
     display: flex;
     align-items: center;
     min-height: 420px;
-    height: 100%;
 
     &.column {
       flex-direction: column-reverse;

@@ -1,5 +1,5 @@
 <template>
-    <div class="content management">
+    <div class="content">
         <div class="highlight"></div>
         <div class="content-2560">
             <Title class="title-button" title="благотворительный сервис"/>
@@ -136,8 +136,9 @@ import CharityQRIcon from "@/assets/images/qr/charity.svg";
       }
 
       .element-3 {
-        height: 100%;
         min-width: 406px;
+        display: flex;
+        align-items: center;
       }
     }
   }

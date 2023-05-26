@@ -79,7 +79,8 @@ const router = createRouter({
             path: '/residents/exploreMoscow',
             name: '/residents/exploreMoscow',
             component: responsiveRoute({
-                xl: () => import('@/views/full/resident/ExploreMoscow.vue')
+                xl: () => import('@/views/full/resident/ExploreMoscow.vue'),
+                lg: () => import('@/views/touch/resident/ExploreMoscow.vue')
             }),
         },
         {
