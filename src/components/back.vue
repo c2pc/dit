@@ -124,9 +124,12 @@ const margin = computed(() => {
     }
 
     &.blue-filled {
-      transition: .5s;
-      background: linear-gradient(90deg, rgba(42, 177, 254, 0.5) 0%, rgba(5, 108, 236, 0.5) 39.75%, rgba(11, 55, 222, 0.5) 97.91%);
+      transition: 0.5s;
+      background: linear-gradient(2deg, rgb(3 163 255 / 50%) 0%, rgb(38 138 255 / 50%) 25%, rgb(75 117 255 / 43%) 50%, rgb(67 148 242 / 50%) 75%, rgb(11 62 255 / 50%) 100%);
       backdrop-filter: blur(6.5px);
+      border: none;
+      background-clip: padding-box;
+      outline: none;
 
       svg path {
         fill: #FFFFFF;
@@ -139,6 +142,9 @@ const margin = computed(() => {
       &:hover {
         background: linear-gradient(90deg, rgba(42, 177, 254, 0.85) 0%, rgba(5, 108, 236, 0.85) 39.75%, rgba(11, 55, 222, 0.85) 97.91%);
         transition: .5s;
+        border: none;
+        background-clip: padding-box;
+        outline: none;
       }
     }
   }

@@ -7,7 +7,7 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            name: 'home',
+            name: '/',
             component: responsiveRoute({
                 lg: () => import('@/views/touch/Home.vue'),
                 xl: () => import('@/views/full/Home.vue')
@@ -15,7 +15,7 @@ const router = createRouter({
         },
         {
             path: '/management',
-            name: 'management',
+            name: '/management',
             component: responsiveRoute({
                 lg: () => import('@/views/touch/Management.vue'),
                 xl: () => import('@/views/full/Management.vue')
@@ -23,7 +23,7 @@ const router = createRouter({
         },
         {
             path: '/management/moscow_in_numbers',
-            name: 'moscow_in_numbers',
+            name: '/management/moscow_in_numbers',
             component: responsiveRoute({
                 lg: () => import('@/views/touch/management/MoscowInNumbers.vue'),
                 xl: () => import('@/views/full/management/MoscowInNumbers.vue')
@@ -31,14 +31,14 @@ const router = createRouter({
         },
         {
             path: '/management/digital_twin',
-            name: 'digital_twin',
+            name: '/management/digital_twin',
             component: responsiveRoute({
                 xl: () => import('@/views/full/management/DigitalTwin.vue')
             })
         },
         {
             path: '/management/moshub',
-            name: 'moshub',
+            name: '/management/moshub',
             component: responsiveRoute({
                 lg: () => import('@/views/touch/management/MosHub.vue'),
                 xl: () => import('@/views/full/management/MosHub.vue')
@@ -46,7 +46,7 @@ const router = createRouter({
         },
         {
             path: '/video',
-            name: 'video',
+            name: '/video',
             component: responsiveRoute({
                 lg: () => import('@/views/touch/Video.vue'),
                 xl: () => import('@/views/full/Video.vue')
@@ -54,7 +54,7 @@ const router = createRouter({
         },
         {
             path: '/business',
-            name: 'business',
+            name: '/business',
             component: responsiveRoute({
                 lg: () => import('@/views/touch/Business.vue'),
                 xl: () => import('@/views/full/Business.vue')
@@ -62,11 +62,60 @@ const router = createRouter({
         },
         {
             path: '/residents',
-            name: 'residents',
+            name: '/residents',
             component: responsiveRoute({
                 lg: () => import('@/views/touch/Resident.vue'),
                 xl: () => import('@/views/full/Resident.vue')
             })
+        },
+        {
+            path: '/residents/charity',
+            name: '/residents/charity',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/resident/Charity.vue')
+            }),
+        },
+        {
+            path: '/residents/exploreMoscow',
+            name: '/residents/exploreMoscow',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/resident/ExploreMoscow.vue')
+            }),
+        },
+        {
+            path: '/residents/moscowLibraries',
+            name: '/residents/moscowLibraries',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/resident/MoscowLibraries.vue')
+            }),
+        },
+        {
+            path: '/residents/movingInMoscow',
+            name: '/residents/movingInMoscow',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/resident/MovingInMoscow.vue')
+            }),
+        },
+        {
+            path: '/residents/russPass',
+            name: '/residents/russPass',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/resident/RussPass.vue')
+            }),
+        },
+        {
+            path: '/residents/togetherWithCulture',
+            name: '/residents/togetherWithCulture',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/resident/TogetherWithCulture.vue')
+            }),
+        },
+        {
+            path: '/residents/unnecessaryThings',
+            name: '/residents/unnecessaryThings',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/resident/UnnecessaryThings.vue')
+            }),
         },
     ]
 });

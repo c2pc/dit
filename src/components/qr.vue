@@ -59,25 +59,27 @@ const props = defineProps<{
     display: flex;
     align-items: center;
     min-height: 420px;
+    height: 100%;
 
     &.column {
-        flex-direction: column-reverse;
-        justify-content: center;
-        padding: 41px 33px;
+      flex-direction: column-reverse;
+      justify-content: center;
+      padding: 41px 33px;
 
-        .action {
-            margin-left: 0;
-            margin-bottom: 30px;
-            text-align: center;
-            padding: 0 14px;
-            flex: none;
-            order: 0;
-            flex-grow: 0;
-        }
+      .action {
+        margin-left: 0;
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 0 14px;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
     }
 
     .img {
       border-radius: 10px;
+      background: #000B33;
 
       img {
         width: 340px;

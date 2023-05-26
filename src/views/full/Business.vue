@@ -4,9 +4,9 @@
         <div class="content-2560">
             <Title class="title-button" title="Инвестиционный портал"/>
             <div class="elements">
-                <div class="element element-1"></div>
-                <div class="element element-2"></div>
-                <div class="element element-3">
+                <div class="element element-1 after"></div>
+                <div class="element element-2 after"></div>
+                <div class="element element-3 after">
                     <iframe
                             class="iframe"
                             height="100%"
@@ -45,6 +45,7 @@ import BusinessQRIcon from "@/assets/images/qr/business.svg";
   mix-blend-mode: normal;
   display: flex;
   background: url("@/assets/images/full/business/bg.png") no-repeat left center;
+    z-index: 0;
 
   .content-2560 {
     width: 2560px;
@@ -71,9 +72,8 @@ import BusinessQRIcon from "@/assets/images/qr/business.svg";
         margin-left: 60px;
         border-radius: 10px;
         position: relative;
-        background: #000929;
 
-        &:before {
+        &.after:after {
           content: '';
           position: absolute;
           width: 100%;
@@ -94,13 +94,11 @@ import BusinessQRIcon from "@/assets/images/qr/business.svg";
       .element-1 {
         height: 100%;
         min-width: 641.77px;
-        background-color: #0A1ED7;
       }
 
       .element-2 {
         height: 100%;
         min-width: 631.77px;
-        background-color: #0A1ED7;
       }
 
       .element-3 {

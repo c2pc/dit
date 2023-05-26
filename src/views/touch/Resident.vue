@@ -31,6 +31,7 @@ import RelocationIcon from "@/assets/images/touch/resident/relocation.svg";
 import router from "@/router";
 import Title from "@/components/title.vue";
 import BlockButton from "@/components/block-button.vue";
+import {socket} from "@/main";
 
 type Block = {
     class?: string;
@@ -46,49 +47,49 @@ const blocks: Block[] = [
         class: "short",
         defaultIcon: PlaneIcon,
         description: "Цифровой туристический сервис помогает сделать путешествия по России удобнее и интереснее, а процесс их организации – проще.",
-        onClick: () => router.push("/resident/russpass"),
+        onClick: () => socket.emit("pageTransition", "/residents/russPass"),
     },
     {
         title: "Благотворительный сервис",
         class: "short",
         defaultIcon: HandIcon,
         description: "Помогать легко с благотворительным сервисом на mos.ru. Проверенные фонды, честные цели и регулярные отчеты.",
-        onClick: () => router.push("/resident/russpass"),
+        onClick: () => socket.emit("pageTransition", "/residents/charity"),
     },
     {
         title: "СЕРВИС «ВЫВОЗ НЕНУЖНЫХ ВЕЩЕЙ»",
         class: "short",
         defaultIcon: FridgeIcon,
         description: "Сервис позволяет экологично избавиться от ненужной бытовой техники, мебели и других крупногабаритных предметов.",
-        onClick: () => router.push("/resident/russpass"),
+        onClick: () => socket.emit("pageTransition", "/residents/unnecessaryThings"),
     },
     {
         title: "Переезд в Москве",
         class: "short",
         defaultIcon: RelocationIcon,
         description: "Помогает организовать жизнь в Москве после переезда и получить всю информацию, которая потребуется на новом месте жительства.",
-        onClick: () => router.push("/resident/russpass"),
+        onClick: () => socket.emit("pageTransition", "/residents/movingInMoscow"),
     },
     {
         title: "Сервис краткосрочной аренды \"Вместе с культурой\"",
         class: "long",
         defaultIcon: BuildingIcon,
         description: "Первый в России сервис, который позволяет горожанам арендовать помещения для проведения частных мероприятий в культурных учреждениях Москвы.",
-        onClick: () => router.push("/resident/russpass"),
+        onClick: () => socket.emit("pageTransition", "/residents/togetherWithCulture"),
     },
     {
         title: "Узнай Москву",
         class: "long",
         defaultIcon: MoscowIcon,
         description: "Интерактивный онлайн-гид по Москве помогает изучать историю и архитектуру столицы, находить прогулочные маршруты по городу и проходить онлайн-квизы.",
-        onClick: () => router.push("/resident/russpass"),
+        onClick: () => router.push("/residents/exploreMoscow"),
     },
     {
         title: "Сервис \"Библиотеки Москвы\"",
         class: "long",
         defaultIcon: BooksIcon,
         description: "Позволяет забронировать книгу, чтобы потом получить ее в одной из 440 библиотек города, продлить срок хранения книги и просмотреть тематические подборки изданий.",
-        onClick: () => router.push("/resident/russpass"),
+        onClick: () => socket.emit("pageTransition", "/residents/moscowLibraries"),
     },
 ]
 </script>

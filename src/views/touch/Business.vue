@@ -32,8 +32,8 @@ import Back from "@/components/back.vue";
   .back-button {
     position: absolute;
     z-index: 100;
-    left: 1612px;
-    top: 135px;
+    left: 1660px;
+    top: 21px;
   }
 }
 </style>
