@@ -1,24 +1,24 @@
 <template>
-    <div class="content management">
+    <div class="content">
         <div class="highlight"></div>
         <div class="content-2560">
-            <Title class="title-button" title="Инвестиционный портал"/>
+            <Title class="title-button" title='Сервис "Библиотеки Москвы"'/>
             <div class="elements">
-                <div class="element element-1"></div>
-                <div class="element element-2"></div>
-                <div class="element element-3">
+                <div class="element element-1 after">
 
+                </div>
+                <div class="element element-2 after">
                 </div>
             </div>
         </div>
         <div class="content-1024">
             <div class="elements">
                 <qr
-                    :qr="BusinessQRIcon"
+                    :qr="MoscowLibrariesQRIcon"
                     :show-description="true"
                     action="ПЕРЕЙДИТЕ ПО qr-коду, чтобы узнать подробнее"
                     header="О сервисе"
-                    text="Инвестиционная карта – один из ключевых сервисов портала. Собранная на карте информация вместе с аналитическими слоями помогают любому пользователю портала осуществить оценку потенциала локации для ведения бизнеса."/>
+                    text="Сервис, который делает библиотеки ближе к московским читателям. Мы собрали информацию обо всех бумажных книгах в одном месте."/>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
 <script lang="ts" setup>
 import Qr from "@/components/qr.vue";
 import Title from "@/components/title.vue";
-import BusinessQRIcon from "@/assets/images/qr/business.svg";
+import MoscowLibrariesQRIcon from "@/assets/images/qr/moscowLibraries.svg";
 </script>
 
 <style lang="scss" scoped>
@@ -41,22 +41,23 @@ import BusinessQRIcon from "@/assets/images/qr/business.svg";
     display: flex;
     background: url("@/assets/images/full/resident/bgs/moscowLibraries.png") no-repeat left center;
     z-index: 0;
+
     .content-2560 {
         width: 2560px;
-        padding: 298px 150px 0 150px;
+        padding: 281px 100px 0 100px;
 
         .title-button {
             position: absolute;
             z-index: 2;
-            left: 150px;
-            top: 205px;
+            left: 100px;
+            top: 177px;
         }
 
         .elements {
             position: relative;
             max-height: 100%;
             max-width: 100%;
-            height: 521px;
+            height: 525.68px;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -66,9 +67,8 @@ import BusinessQRIcon from "@/assets/images/qr/business.svg";
                 margin-left: 60px;
                 border-radius: 10px;
                 position: relative;
-                background: #000929;
 
-                &:before {
+                &.after:after {
                     content: '';
                     position: absolute;
                     width: 100%;
@@ -88,23 +88,12 @@ import BusinessQRIcon from "@/assets/images/qr/business.svg";
 
             .element-1 {
                 height: 100%;
-                min-width: 641.77px;
+                min-width: 1295.61px;
             }
 
             .element-2 {
                 height: 100%;
-                min-width: 631.77px;
-            }
-
-            .element-3 {
-                height: 100%;
-                width: 100%;
-
-                .iframe {
-                    height: 100%;
-                    width: 100%;
-                    border-radius: 10px;
-                }
+                min-width: 934.54px;
             }
         }
     }

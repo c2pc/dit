@@ -13,6 +13,7 @@ const route = useRoute();
 const router = useRouter();
 const width = window.innerWidth
 
+window.onresize = function(){ location.reload(); }
 
 if (width >= 2000) {
     socket.on('pageTransition', (nextPage) => {

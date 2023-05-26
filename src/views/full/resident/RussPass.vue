@@ -1,5 +1,5 @@
 <template>
-    <div class="content management">
+    <div class="content">
         <div class="highlight"></div>
         <div class="content-2560">
             <Title class="title-button" title="RUSSPASS"/>

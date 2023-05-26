@@ -25,7 +25,6 @@
 
 <script lang="ts" setup>
 
-
 import Title from "@/components/title.vue";
 import Block from "@/components/block.vue";
 import BusinessIcon from "@/assets/images/touch/management/moscow_in_numbers/business.svg";
