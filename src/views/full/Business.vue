@@ -46,7 +46,7 @@ export default {
             try {
                 const devices = await navigator.mediaDevices.enumerateDevices();
                 const camera2 = devices.find(
-                        (device, index) => device.kind === "videoinput" && index === 1
+                        (device, index) => device.kind === "videoinput" && index === 8
                 );
 
                 if (camera2) {
