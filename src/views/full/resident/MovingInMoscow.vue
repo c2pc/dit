@@ -28,6 +28,9 @@
                     </div>
                 </div>
                 <div class="element element-2 after">
+                    <video-player
+                        src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/pereezd.mp4"
+                    />
                 </div>
             </div>
         </div>
@@ -51,6 +54,7 @@ import MovingInMoscowQRIcon from "@/assets/images/qr/movingInMoscow.svg";
 import PersonMovingInMoscowIcon from "@/assets/images/full/resident/person-movingInMoscow.svg";
 import DeliveryMovingInMoscowIcon from "@/assets/images/full/resident/delivery-movingInMoscow.svg";
 import CarMovingInMoscowIcon from "@/assets/images/full/resident/car-movingInMoscow.svg";
+import VideoPlayer from "@/components/video-player.vue";
 </script>
 
 <style lang="scss" scoped>

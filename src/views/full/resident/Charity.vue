@@ -4,7 +4,11 @@
         <div class="content-2560">
             <Title class="title-button" title="благотворительный сервис"/>
             <div class="elements">
-                <div class="element element-1 after"></div>
+                <div class="element element-1 after">
+                    <video-player
+                        src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/blago.mp4"
+                    />
+                </div>
                 <div class="element element-2">
                     <div class="title">Поддержите благотворительные программы категории «Наука и образование»</div>
                     <div class="description">Вместе поможем детям-сиротам получить среднее образование, ребятам с
@@ -45,6 +49,7 @@
 import Qr from "@/components/qr.vue";
 import Title from "@/components/title.vue";
 import CharityQRIcon from "@/assets/images/qr/charity.svg";
+import VideoPlayer from "@/components/video-player.vue";
 </script>
 
 <style lang="scss" scoped>

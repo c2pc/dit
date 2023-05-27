@@ -8,6 +8,9 @@
 
                 </div>
                 <div class="element element-2 after">
+                    <video-player
+                        src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/biblioteka.mp4"
+                    />
                 </div>
             </div>
         </div>
@@ -28,6 +31,7 @@
 import Qr from "@/components/qr.vue";
 import Title from "@/components/title.vue";
 import MoscowLibrariesQRIcon from "@/assets/images/qr/moscowLibraries.svg";
+import VideoPlayer from "@/components/video-player.vue";
 </script>
 
 <style lang="scss" scoped>

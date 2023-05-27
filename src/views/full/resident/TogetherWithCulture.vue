@@ -5,7 +5,9 @@
             <Title class="title-button" title='Сервис краткосрочной аренды "Вместе с культурой"'/>
             <div class="elements">
                 <div class="element element-1 after">
-
+                    <video-player
+                        src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/arenda.mp4"
+                    />
                 </div>
                 <div class="element element-2 after">
                 </div>
@@ -28,6 +30,7 @@
 import Qr from "@/components/qr.vue";
 import Title from "@/components/title.vue";
 import TogetherWithCultureQRIcon from "@/assets/images/qr/togetherWithCulture.svg";
+import VideoPlayer from "@/components/video-player.vue";
 </script>
 
 <style lang="scss" scoped>

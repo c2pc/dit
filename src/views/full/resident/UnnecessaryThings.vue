@@ -4,7 +4,11 @@
         <div class="content-2560">
             <Title class="title-button" title="СЕРВИС «ВЫВОЗ НЕНУЖНЫХ ВЕЩЕЙ»" />
             <div class="elements">
-                <div class="element element-1"></div>
+                <div class="element element-1 after">
+                    <video-player
+                        src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/vyvoz.mp4"
+                    />
+                </div>
                 <div class="element element-2">
                     <video ref="videoPlayer" class="video-player" autoplay></video>
                 </div>
@@ -28,9 +32,11 @@
 import Qr from "@/components/qr.vue";
 import Title from "@/components/title.vue";
 import UnnecessaryThingsQRIcon from "@/assets/images/qr/unnecessaryThings.svg";
+import VideoPlayer from "@/components/video-player.vue";
 
 export default {
     components: {
+        VideoPlayer,
         Qr,
         Title,
     },

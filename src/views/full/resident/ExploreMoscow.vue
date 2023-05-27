@@ -5,7 +5,9 @@
             <Title class="title-button" title='Узнай Москву'/>
             <div class="elements">
                 <div class="element element-1 after">
-
+                    <video-player
+                            src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/uznay.mp4"
+                    />
                 </div>
                 <div class="element element-2">
                     <qr
@@ -41,6 +43,7 @@ import ExploreMoscow3 from "@/assets/images/full/resident/3-exploreMoscow.png";
 import ExploreMoscow4 from "@/assets/images/full/resident/4-exploreMoscow.png";
 import ExploreMoscow5 from "@/assets/images/full/resident/5-exploreMoscow.png";
 import ExploreMoscow6 from "@/assets/images/full/resident/6-exploreMoscow.png";
+import VideoPlayer from "@/components/video-player.vue";
 </script>
 
 <style lang="scss" scoped>
