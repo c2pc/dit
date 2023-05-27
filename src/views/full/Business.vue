@@ -25,47 +25,53 @@
     </div>
 </template>
 
-<script lang="ts">
+<script>
 import Qr from "@/components/qr.vue";
 import Title from "@/components/title.vue";
 import BusinessQRIcon from "@/assets/images/qr/business.svg";
-
-import { onMounted, onBeforeUnmount, ref } from "vue";
 
 export default {
     components: {
         Qr,
         Title,
     },
-    setup() {
-        const videoPlayer = ref(null);
-
-        // Функция для захвата видеопотока с веб-камеры
-        const captureVideo = async () => {
+    mounted() {
+        this.captureVideo();
+    },
+    beforeUnmount() {
+        this.stopVideoCapture();
+    },
+    methods: {
+        async captureVideo() {
             try {
-                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                videoPlayer.value.srcObject = stream;
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                const camera2 = devices.find(
+                        (device, index) => device.kind === "videoinput" && index === 1
+                );
+
+                if (camera2) {
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        video: { deviceId: camera2.deviceId },
+                    });
+                    this.$refs.videoPlayer.srcObject = stream;
+                } else {
+                    console.error("Камера №2 не найдена.");
+                }
             } catch (error) {
                 console.error("Ошибка при захвате видео с веб-камеры:", error);
             }
-        };
-
-        onMounted(() => {
-            captureVideo();
-        });
-
-        onBeforeUnmount(() => {
-            // Остановка видеопотока при выходе из компонента
-            const stream = videoPlayer.value.srcObject;
+        },
+        stopVideoCapture() {
+            const stream = this.$refs.videoPlayer.srcObject;
             if (stream) {
                 const tracks = stream.getTracks();
                 tracks.forEach((track) => track.stop());
             }
-        });
-
+        },
+    },
+    data() {
         return {
-            videoPlayer,
-            BusinessQRIcon,
+            BusinessQRIcon: BusinessQRIcon,
         };
     },
 };

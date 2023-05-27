@@ -1,1 +1,0 @@
-import{d as e,o as _,c as o,t as s}from"./index-49709420.js";import{_ as n}from"./_plugin-vue_export-helper-c27b6911.js";const c={class:"title"},a=e({__name:"title",props:{title:null},setup(t){return(i,l)=>(_(),o("div",c,s(t.title),1))}});const d=n(a,[["__scopeId","data-v-014d23e8"]]);export{d as T};
