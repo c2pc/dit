@@ -61,7 +61,10 @@ const blocks: Block[] = [
         class: "short",
         defaultIcon: FridgeIcon,
         description: "Сервис позволяет экологично избавиться от ненужной бытовой техники, мебели и других крупногабаритных предметов.",
-        onClick: () => socket.emit("pageTransition", "/residents/unnecessaryThings"),
+        onClick: () => {
+            socket.emit("pageTransition", "/residents/unnecessaryThings");
+            shell.openExternal("path/to/your/windows/application.exe");
+        },
     },
     {
         title: "Переезд в Москве",
