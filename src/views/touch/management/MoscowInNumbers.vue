@@ -1,6 +1,6 @@
 <template>
     <div class="content moscow-in-numbers">
-        <back :show-description="false" class="back-button" type="white"/>
+        <back :on-click="()=>router.push('/management')" :show-description="false" class="back-button" type="white"/>
         <Title class="title-button" title="Технологии для управления"/>
         <div class="elements">
             <block v-for="block in blocks" :disabled="true" :style="{width: `calc(100%/${block.width} - 14px)`}"

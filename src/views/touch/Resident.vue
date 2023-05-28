@@ -1,6 +1,6 @@
 <template>
     <div class="content resident">
-        <back :show-description="false" class="back-button" type="white"/>
+        <back :on-click="()=>router.push('/')" :show-description="false" class="back-button" type="white"/>
         <Title class="title-button" title="Технологии для жителей"/>
         <div class="elements">
             <block v-for="block in blocks" :class="block.class" class="element">

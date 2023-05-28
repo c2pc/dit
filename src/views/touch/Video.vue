@@ -1,6 +1,6 @@
 <template>
     <div class="content video">
-        <back :show-description="true" class="back-button" type="white"/>
+        <back :on-click="()=>router.push('/')" :show-description="true" class="back-button" type="white"/>
         <Title class="title-button" title="Видео"/>
         <div class="highlight"></div>
         <div class="elements">

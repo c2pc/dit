@@ -1,6 +1,7 @@
 <template>
     <div class="content business">
-        <back :show-description="false" class="back-button" type="blue-filled"/>
+        <back :on-click="()=>router.push('/')" :show-description="false" class="back-button"
+              type="blue-filled"/>
         <iframe
                 class="iframe"
                 height="100%"
@@ -13,6 +14,7 @@
 <script lang="ts" setup>
 
 import Back from "@/components/back.vue";
+import router from "@/router";
 </script>
 
 <style lang="scss" scoped>
