@@ -1,5 +1,5 @@
 <template>
-    <div class="content management">
+    <div class="content">
         <back :show-description="false" class="back-button" type="white"/>
         <Title class="title-button" title="Технологии для управления"/>
         <div class="highlight"></div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="content management">
+    <div class="content">
         <div class="highlight"></div>
         <div class="content-2560">
             <Title class="title-button" title="Инвестиционный портал" />
@@ -82,7 +82,7 @@ export default {
     width: 100%;
     height: 100%;
 }
-.content.management {
+.content {
     position: relative;
     max-width: 3584px;
     min-width: 100vw;

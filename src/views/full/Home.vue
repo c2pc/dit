@@ -148,7 +148,7 @@ const elements2: Element[] = [
 </script>
 
 <style lang="scss" scoped>
-.content.home {
+.content {
   position: relative;
   max-width: 3584px;
   min-width: 100vw;

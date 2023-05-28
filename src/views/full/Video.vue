@@ -9,7 +9,7 @@
 </script>
 
 <style lang="scss" scoped>
-.content.video {
+.content {
   position: relative;
   max-width: 1920px;
   min-width: 100vw;

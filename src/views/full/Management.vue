@@ -1,5 +1,5 @@
 <template>
-    <div class="content management">
+    <div class="content">
         <div class="highlight"></div>
         <div class="content-2560">
             <Title class="title-button" title="Технологии для управления"/>
@@ -150,7 +150,7 @@ const elements2: Element[] = [
 </script>
 
 <style lang="scss" scoped>
-.content.management {
+.content {
   position: relative;
   max-width: 3584px;
   min-width: 100vw;
