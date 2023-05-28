@@ -1,6 +1,7 @@
 <template>
     <div class="video-player">
-        <video id="videoPlayer" :autoplay="true" :controls="false" :loop="true" :muted="true">
+        <video id="videoPlayer" ref="video" :autoplay="true" :controls="false" :loop="loop" :muted="true"
+               @ended="onEnd">
             <source :src="src">
         </video>
     </div>
@@ -10,6 +11,8 @@
 
 const props = defineProps<{
     src: string;
+    onEnd?: () => any;
+    loop?: boolean,
 }>()
 
 </script>

@@ -1,10 +1,10 @@
 <template>
     <div class="content">
-        <back :show-description="false" class="back-button" type="white"/>
+        <back :show-description="false" class="back-button" type="white" :on-click="()=>router.push('/residents')"/>
         <Title class="title-button" title="Узнай москву"/>
         <div class="highlight"></div>
         <div class="elements">
-            <div v-for="el in elements" class="element">
+            <div v-for="el in elements" class="element" @click="el.onClick">
                 <div class="img">
                     <img :src="el.src" alt="">
                 </div>
@@ -22,18 +22,39 @@ import ExploreMoscow2 from "@/assets/images/touch/resident/2-exploreMoscow.png";
 import ExploreMoscow3 from "@/assets/images/touch/resident/3-exploreMoscow.png";
 import ExploreMoscow4 from "@/assets/images/touch/resident/4-exploreMoscow.png";
 import ExploreMoscow5 from "@/assets/images/touch/resident/5-exploreMoscow.png";
+import router from "@/router";
 
 type Element = {
     src: string;
     title: string;
+    onClick: () => any;
 }
 
 const elements: Element[] = [
-    {src: ExploreMoscow1, title: "Крыши москвы"},
-    {src: ExploreMoscow2, title: "Гостиница «Ленинградская»"},
-    {src: ExploreMoscow3, title: "Дом Пашкова"},
-    {src: ExploreMoscow4, title: "Петровский Путевой дворец"},
-    {src: ExploreMoscow5, title: "Здание гостиницы «Националь»"},
+    {
+        src: ExploreMoscow1,
+        title: "Крыши москвы",
+        onClick: () => router.push("/residents/exploreMoscow2/VR-07_vr_roof-roof")
+    },
+    {
+        src: ExploreMoscow2,
+        title: "Гостиница «Ленинградская»",
+        onClick: () => router.push("/residents/exploreMoscow2/VR-02_national-national")
+    },
+    {
+        src: ExploreMoscow3, title: "Дом Пашкова",
+        onClick: () => router.push("/residents/exploreMoscow2/VR-07_vr_roof-roof")
+    },
+    {
+        src: ExploreMoscow4,
+        title: "Петровский Путевой дворец",
+        onClick: () => router.push("/residents/exploreMoscow2/VR-02_national-national")
+    },
+    {
+        src: ExploreMoscow5,
+        title: "Здание гостиницы «Националь»",
+        onClick: () => router.push("/residents/exploreMoscow2/VR-02_national-national")
+    },
 ]
 </script>
 

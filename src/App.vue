@@ -1,5 +1,5 @@
 <template>
-    <router-view/>
+    <router-view :key="route.fullPath"/>
 </template>
 
 <script lang="ts" setup>
@@ -31,6 +31,13 @@ if (width >= 2000) {
     watchEffect(() => {
         console.log('Изменение маршрута:', route.fullPath);
         socket.emit("pageTransition", route.fullPath);
+    });
+    socket.on('pageTransition', (nextPage) => {
+        console.log('Получено изменение маршрута:', nextPage);
+        // Обновляем маршрут только если он отличается от текущего
+        if (router.currentRoute.value.fullPath !== nextPage) {
+            router.push(nextPage);
+        }
     });
 }
 </script>

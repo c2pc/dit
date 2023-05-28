@@ -6,6 +6,7 @@
             <div class="elements">
                 <div class="element element-1 after">
                     <video-player
+                        :loop="true"
                         src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/arenda.mp4"
                     />
                 </div>

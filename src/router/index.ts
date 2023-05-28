@@ -31,7 +31,7 @@ const router = createRouter({
         },
         {
             path: '/management/moscow_in_numbers/:path',
-            name: '/management/moscow_in_numbers/frame',
+            name: '/management/moscow_in_numbers/:path',
             component: responsiveRoute({
                 xl: () => import('@/views/full/management/MoscowInNumbersFrame.vue')
             })
@@ -88,6 +88,14 @@ const router = createRouter({
             component: responsiveRoute({
                 xl: () => import('@/views/full/resident/ExploreMoscow.vue'),
                 lg: () => import('@/views/touch/resident/ExploreMoscow.vue')
+            }),
+        },
+        {
+            path: '/residents/exploreMoscow2/:path',
+            name: '/residents/exploreMoscow2/:path',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/resident/ExploreMoscow2.vue'),
+                lg: () => import('@/views/touch/resident/ExploreMoscow2.vue')
             }),
         },
         {

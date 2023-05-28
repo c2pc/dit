@@ -6,6 +6,8 @@
             <div class="elements">
                 <div class="element element-1 after">
                     <video-player
+                            :on-end="onEnd"
+                            :loop="false"
                             src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/uznay.mp4"
                     />
                 </div>
@@ -22,12 +24,9 @@
         <div class="content-1024">
             <Title class="title-button" title='Точки притяжения'/>
             <div class="elements">
-                <div class="element"><img :src="ExploreMoscow1" alt=""></div>
-                <div class="element"><img :src="ExploreMoscow2" alt=""></div>
-                <div class="element"><img :src="ExploreMoscow3" alt=""></div>
-                <div class="element"><img :src="ExploreMoscow4" alt=""></div>
-                <div class="element"><img :src="ExploreMoscow5" alt=""></div>
-                <div class="element"><img :src="ExploreMoscow6" alt=""></div>
+                <div v-for="el in elements" class="element">
+                    <img :src="el.src" alt="">
+                </div>
             </div>
         </div>
     </div>
@@ -44,6 +43,26 @@ import ExploreMoscow4 from "@/assets/images/full/resident/4-exploreMoscow.png";
 import ExploreMoscow5 from "@/assets/images/full/resident/5-exploreMoscow.png";
 import ExploreMoscow6 from "@/assets/images/full/resident/6-exploreMoscow.png";
 import VideoPlayer from "@/components/video-player.vue";
+import router from "@/router";
+import {socket} from "@/main";
+
+type Element = {
+    src: string;
+}
+
+const elements: Element[] = [
+    {src: ExploreMoscow4},
+    {src: ExploreMoscow3},
+    {src: ExploreMoscow6},
+    {src: ExploreMoscow2},
+    {src: ExploreMoscow5},
+    {src: ExploreMoscow1},
+]
+
+const onEnd = () => {
+    router.push('/residents/exploreMoscow2/VR-07_vr_roof-roof')
+    socket.emit("pageTransition", "/residents/exploreMoscow2/VR-07_vr_roof-roof")
+}
 </script>
 
 <style lang="scss" scoped>
@@ -55,7 +74,7 @@ import VideoPlayer from "@/components/video-player.vue";
   min-height: 100vh;
   mix-blend-mode: normal;
   display: flex;
-  background: url("@/assets/images/full/resident/bgs/movingInMoscow.png") no-repeat left center;
+  background: url("@/assets/images/full/resident/bgs/exploreMoscow.png") no-repeat left center;
   z-index: 0;
 
   .content-2560 {
@@ -140,11 +159,14 @@ import VideoPlayer from "@/components/video-player.vue";
         border-radius: 10px;
         width: calc(100% / 2 - 17.71px / 2);
         height: 184.23px;
-        margin-right: 17.71px;
-        margin-top: 17.71px;
+        margin: calc(17.71px / 2);
 
         &:nth-child(2n) {
           margin-right: 0;
+        }
+
+        &:nth-child(2n - 1) {
+          margin-left: 0;
         }
 
         &:nth-child(1), &:nth-child(2) {
