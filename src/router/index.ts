@@ -14,6 +14,13 @@ const router = createRouter({
             })
         },
         {
+            path: '/background',
+            name: '/background',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/Background.vue')
+            })
+        },
+        {
             path: '/management',
             name: '/management',
             component: responsiveRoute({

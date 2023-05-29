@@ -10,6 +10,7 @@
                         :defaultIcon="el.defaultIcon"
                         :defaultIconStyle="el.defaultIconStyle"
                         :description="el.description"
+                        :disabled="el.disabled"
                         :header="el.header"
                         :hoverIcon="el.hoverIcon"
                         :hoverIconStyle="el.hoverIconStyle"
@@ -55,6 +56,7 @@ const elements: Element[] = [
         tooltipIcon: MapTrifold,
         defaultIconStyle: {width: "1031px", height: "629px"},
         hoverIconStyle: {marginTop: "-174px", marginLeft: "-70px"},
+        disabled: false,
     },
     {
         name: "digital_twin_meta",
@@ -68,6 +70,7 @@ const elements: Element[] = [
         tooltipIcon: GlobeHemisphereWestIcon,
         defaultIconStyle: {width: "762px", height: "589px"},
         hoverIconStyle: {marginTop: " -14px", marginLeft: "68px"},
+        disabled: true,
     },
     {
         name: "moscow_in_numbers",
@@ -81,6 +84,7 @@ const elements: Element[] = [
         tooltipIcon: ListNumbersIcon,
         defaultIconStyle: {width: "782px", height: "815px"},
         hoverIconStyle: {marginLeft: "4px"},
+        disabled: false,
     },
     {
         name: "moshub",
@@ -94,6 +98,7 @@ const elements: Element[] = [
         tooltipIcon: CodeIcon,
         defaultIconStyle: {width: "825px", height: "569px"},
         hoverIconStyle: {marginLeft: "165px"},
+        disabled: false,
     },
 ]
 
