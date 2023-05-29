@@ -61,7 +61,7 @@ export default {
                     });
                     this.$refs.videoPlayer.srcObject = stream;
                 } else {
-                    console.error("Камера №1 не найдена.");
+                    console.error("Камера №9 не найдена.");
                 }
             } catch (error) {
                 console.error("Ошибка при захвате видео с веб-камеры:", error);

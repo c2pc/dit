@@ -63,7 +63,7 @@ const blocks: Block[] = [
         description: "Сервис позволяет экологично избавиться от ненужной бытовой техники, мебели и других крупногабаритных предметов.",
         onClick: () => {
             socket.emit("pageTransition", "/residents/unnecessaryThings");
-            shell.openExternal("path/to/your/windows/application.exe");
+            // shell.openExternal("path/to/your/windows/application.exe");
         },
     },
     {

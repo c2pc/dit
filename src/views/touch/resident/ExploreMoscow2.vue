@@ -3,7 +3,7 @@
         <back :on-click="()=>router.push('/residents/exploreMoscow')" :show-description="false" class="back-button"
               type="blue-filled"/>
         <div class="block">
-            <iframe :src="'http://192.168.1.109:8090/'+path+'.html'" class="iframe" height="100%" width="100%"/>
+            <iframe :src="'http://localhost:8090/'+path+'.html'" class="iframe" height="100%" width="100%"/>
             <div class="elements">
                 <div v-for="el in elements" class="element" @click="el.onClick">
                     <div class="img">
@@ -47,26 +47,26 @@ const elements: Element[] = [
     {
         src: ExploreMoscow1,
         title: "Крыши москвы",
-        onClick: () => router.push({path: "/residents/exploreMoscow2/VR-07_vr_roof-roof", force: true})
+        onClick: () => router.push({path: "/residents/exploreMoscow2/07_vr_roof-roof", force: true})
     },
     {
         src: ExploreMoscow2,
         title: "Гостиница «Ленинградская»",
-        onClick: () => router.push("/residents/exploreMoscow2/VR-02_national-national")
+        onClick: () => router.push("/residents/exploreMoscow2/05_lenin-lenin")
     },
     {
         src: ExploreMoscow3, title: "Дом Пашкова",
-        onClick: () => router.push("/residents/exploreMoscow2/VR-07_vr_roof-roof")
+        onClick: () => router.push("/residents/exploreMoscow2/02_pashkov-pashkov")
     },
     {
         src: ExploreMoscow4,
         title: "Петровский Путевой дворец",
-        onClick: () => router.push("/residents/exploreMoscow2/VR-02_national-national")
+        onClick: () => router.push("/residents/exploreMoscow2/03_putevoy-putevoy")
     },
     {
         src: ExploreMoscow5,
         title: "Здание гостиницы «Националь»",
-        onClick: () => router.push("/residents/exploreMoscow2/VR-02_national-national")
+        onClick: () => router.push("/residents/exploreMoscow2/02_national-national")
     },
 ]
 </script>

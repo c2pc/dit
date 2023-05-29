@@ -22,20 +22,6 @@ io.on('connection', (socket) => {
 		// Отправить изменения маршрута всем остальным клиентам
 		socket.broadcast.emit('pageTransition', nextPage);
 		
-		// Проверить, является ли маршрут запуском приложения Windows
-		if (nextPage === '/residents/unnecessaryThings') {
-			// Путь к вашему приложению Windows
-			const appPath = 'C:/tetris/tetris.exe';
-			
-			// Выполнение запуска приложения Windows
-			exec(`start ${appPath}`, (error) => {
-				if (error) {
-					console.error(`Ошибка запуска приложения: ${error.message}`);
-					return;
-				}
-				console.log('Приложение успешно запущено');
-			});
-		}
 	});
 	
 	// Отправить текущий маршрут клиенту при подключении

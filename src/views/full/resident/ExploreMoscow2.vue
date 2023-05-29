@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <div class="content-2560">
-            <iframe :src="'http://192.168.1.109:8090/'+path+'.html'" class="iframe" height="100%" width="100%"/>
+            <video ref="videoPlayer" class="video-player" autoplay width="100%" height="100%"></video>
         </div>
         <div class="content-1024">
             <div class="elements">
@@ -17,20 +17,54 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script>
 import Qr from "@/components/qr.vue";
 import ExploreMoscowQRIcon from "@/assets/images/qr/exploreMoscow.svg";
-import {onBeforeMount, ref} from "vue";
-import {useRoute} from "vue-router";
 
-const path = ref('')
-const route = useRoute()
+export default {
+    components: {
+        Qr,
+    },
+    mounted() {
+        this.captureVideo();
+    },
+    beforeUnmount() {
+        this.stopVideoCapture();
+    },
+    methods: {
+        async captureVideo() {
+            try {
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                const camera10 = devices.find(
+                        (device, index) => device.kind === "videoinput" && index === 4
+                );
 
-onBeforeMount(() => {
-    if (route.params.path) {
-        path.value = route.params.path.replaceAll("-", "/")
-    }
-})
+                if (camera10) {
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        video: { deviceId: camera10.deviceId },
+                    });
+                    this.$refs.videoPlayer.srcObject = stream;
+                } else {
+                    console.error("Камера №10 не найдена.");
+                }
+            } catch (error) {
+                console.error("Ошибка при захвате видео с веб-камеры:", error);
+            }
+        },
+        stopVideoCapture() {
+            const stream = this.$refs.videoPlayer.srcObject;
+            if (stream) {
+                const tracks = stream.getTracks();
+                tracks.forEach((track) => track.stop());
+            }
+        },
+    },
+    data() {
+        return {
+            ExploreMoscowQRIcon: ExploreMoscowQRIcon,
+        };
+    },
+};
 </script>
 
 <style lang="scss" scoped>

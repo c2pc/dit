@@ -34,26 +34,26 @@ const elements: Element[] = [
     {
         src: ExploreMoscow1,
         title: "Крыши москвы",
-        onClick: () => router.push("/residents/exploreMoscow2/VR-07_vr_roof-roof")
+        onClick: () => router.push("/residents/exploreMoscow2/07_vr_roof-roof")
     },
     {
         src: ExploreMoscow2,
         title: "Гостиница «Ленинградская»",
-        onClick: () => router.push("/residents/exploreMoscow2/VR-02_national-national")
+        onClick: () => router.push("/residents/exploreMoscow2/05_lenin-lenin")
     },
     {
         src: ExploreMoscow3, title: "Дом Пашкова",
-        onClick: () => router.push("/residents/exploreMoscow2/VR-07_vr_roof-roof")
+        onClick: () => router.push("/residents/exploreMoscow2/02_pashkov-pashkov")
     },
     {
         src: ExploreMoscow4,
         title: "Петровский Путевой дворец",
-        onClick: () => router.push("/residents/exploreMoscow2/VR-02_national-national")
+        onClick: () => router.push("/residents/exploreMoscow2/03_putevoy-putevoy")
     },
     {
         src: ExploreMoscow5,
         title: "Здание гостиницы «Националь»",
-        onClick: () => router.push("/residents/exploreMoscow2/VR-02_national-national")
+        onClick: () => router.push("/residents/exploreMoscow2/02_national-national")
     },
 ]
 </script>
