@@ -81,7 +81,7 @@ if (width >= 2000) {
             hideVideo()
         } else {
             clearTimeout(timeout)
-            timeout = setTimeout(showVideo, 5000)
+            timeout = setTimeout(showVideo, 45000)
         }
     }
 
