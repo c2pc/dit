@@ -59,12 +59,13 @@ export default {
     min-height: 100vh;
 
     .camera{
-        width: 3584px;
+        max-width: 3584px;
+        max-height: 1024px;
         height: 100%;
         border: none;
         .video-player{
             width: 100%;
-            height: 100%;
+            max-height: 1024px;
         }
     }
 }
