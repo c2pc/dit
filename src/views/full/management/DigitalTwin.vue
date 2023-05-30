@@ -1,7 +1,13 @@
 <template>
     <div class="content moscow-in-numbers">
         <div class="camera">
-            <video id="videoPlayer" ref="videoPlayer" class="video-player" autoplay></video>
+            <div class="content">
+                <div class="content-2560">
+                    <div class="element">
+                        <video id="videoPlayer" ref="videoPlayer" class="video-player" autoplay></video>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -53,20 +59,32 @@ export default {
 <style lang="scss" scoped>
 .content {
     position: relative;
-    max-width: 3840px;
+    max-width: 3584px;
     min-width: 100vw;
-    max-height: 2160px;
+    max-height: 1024px;
     min-height: 100vh;
 
     .camera{
-        max-width: 3840px;
-        max-height: 2160px;
+        max-width: 3584px;
+        max-height: 1024px;
         height: 100%;
         border: none;
-        .video-player{
-            width: 100%;
-            max-height: 2160px;
+        display: flex;
+        z-index: 0;
+        .content-2560 {
+            width: 2560px;
+            max-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .video-player{
+                width: 100%;
+                position: relative;
+                max-width: 100%;
+                height: 1000px;
+                width: 1920px;
+                max-height: 1024px;
+            }
         }
-    }
-}
+    }}
 </style>
