@@ -64,8 +64,9 @@ if (width >= 2000) {
     }
     const showVideo = (): void => {
         if (route.fullPath !== '/') {
+            const video = document.querySelector("#videoPlayer")
             const iframe = document.querySelector("iframe")
-            if (!iframe){
+            if (!video && !iframe) {
                 socket.emit("showVideoInFull")
             }
         }
