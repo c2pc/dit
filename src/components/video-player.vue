@@ -23,10 +23,12 @@ const props = defineProps<{
   height: 100%;
   width: 100%;
 
+
   video {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    z-index: 10001;
   }
 }
 

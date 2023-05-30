@@ -9,48 +9,8 @@
                 </div>
 </template>
 
-<script>
+<script  lang="ts" setup>
 import VideoPlayer from "@/components/video-player.vue";
-
-export default {
-    components: {
-        VideoPlayer,
-    },
-    mounted() {
-        this.captureVideo();
-    },
-    beforeUnmount() {
-        this.stopVideoCapture();
-    },
-    methods: {
-        async captureVideo() {
-            try {
-                const devices = await navigator.mediaDevices.enumerateDevices();
-                const camera2 = devices.find(
-                        (device, index) => device.kind === "videoinput" && index === 2
-                );
-
-                if (camera2) {
-                    const stream = await navigator.mediaDevices.getUserMedia({
-                        video: { deviceId: camera2.deviceId },
-                    });
-                    this.$refs.videoPlayer.srcObject = stream;
-                } else {
-                    console.error("Камера №2 не найдена.");
-                }
-            } catch (error) {
-                console.error("Ошибка при захвате видео с веб-камеры:", error);
-            }
-        },
-        stopVideoCapture() {
-            const stream = this.$refs.videoPlayer.srcObject;
-            if (stream) {
-                const tracks = stream.getTracks();
-                tracks.forEach((track) => track.stop());
-            }
-        },
-    },
-};
 </script>
 
 <style lang="scss" scoped>
@@ -60,12 +20,15 @@ export default {
     background-size: cover;
 }
 .content-2560 {
+    position: relative;
     width: 2560px;
     max-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 0;
     .video-player{
+        z-index: 10;
         padding: 80px 150px 0;
         position: relative;
         max-width: 100%;
