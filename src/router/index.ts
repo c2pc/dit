@@ -59,6 +59,13 @@ const router = createRouter({
             })
         },
         {
+            path: '/management/moshub2',
+            name: '/management/moshub2',
+            component: responsiveRoute({
+                xl: () => import('@/views/full/management/MosHub2.vue')
+            })
+        },
+        {
             path: '/video',
             name: '/video',
             component: responsiveRoute({
@@ -144,15 +151,15 @@ const router = createRouter({
 });
 
 const socket = io('/socket.io');
+const width = window.innerWidth
 
-// Обработчик события изменения маршрута на сервере
-socket.on('pageTransition', (nextPage) => {
-    router.push(nextPage);
-});
+if (width < 2000){
+    // Обработчик события изменения маршрута на клиенте
+    router.afterEach((to) => {
+        console.log('pageTransition56567567')
+        socket.emit('pageTransition', to.fullPath);
+    });
+}
 
-// Обработчик события изменения маршрута на клиенте
-router.afterEach((to) => {
-    socket.emit('pageTransition', to.fullPath);
-});
 
 export default router;
