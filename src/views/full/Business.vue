@@ -4,8 +4,12 @@
         <div class="content-2560">
             <Title class="title-button" title="Инвестиционный портал" />
             <div class="elements">
-                <div class="element element-1 after"></div>
-                <div class="element element-2 after"></div>
+                <div class="element element-1 after">
+                    <img src="@/assets/images/full/business/invest12.png" alt="">
+                </div>
+                <div class="element element-2 after">
+                    <img src="@/assets/images/full/business/invest13.png" alt="">
+                </div>
                 <div class="element element-3 after">
                     <video ref="videoPlayer" class="video-player" autoplay></video>
                 </div>
@@ -117,6 +121,10 @@ export default {
                 margin-left: 60px;
                 border-radius: 10px;
                 position: relative;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
 
                 &.after:after {
                     content: "";

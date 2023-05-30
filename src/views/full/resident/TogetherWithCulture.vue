@@ -11,6 +11,7 @@
                     />
                 </div>
                 <div class="element element-2 after">
+                    <img :src="Arenda1" alt="">
                 </div>
             </div>
         </div>
@@ -32,6 +33,7 @@ import Qr from "@/components/qr.vue";
 import Title from "@/components/title.vue";
 import TogetherWithCultureQRIcon from "@/assets/images/qr/togetherWithCulture.svg";
 import VideoPlayer from "@/components/video-player.vue";
+import Arenda1 from "@/assets/images/full/resident/arenda_1.png";
 </script>
 
 <style lang="scss" scoped>
@@ -72,6 +74,11 @@ import VideoPlayer from "@/components/video-player.vue";
         border-radius: 10px;
         position: relative;
 
+          img{
+              width: 100%;
+              height: 100%;
+          }
+
         &.after:after {
           content: '';
           position: absolute;
@@ -92,7 +99,7 @@ import VideoPlayer from "@/components/video-player.vue";
 
       .element-1 {
         height: 100%;
-        min-width: 1224px;
+        min-width: 900px;
       }
 
       .element-2 {

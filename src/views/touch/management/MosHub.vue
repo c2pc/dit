@@ -1,7 +1,7 @@
 <template>
     <div class="content moshub">
         <iframe
-            src="https://hub.mos.ru"
+            src="https://hub.mos.ru/dashboard/"
             height="100%"
             width="100%"
             class="iframe"

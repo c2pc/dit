@@ -5,7 +5,7 @@
             <Title class="title-button" title='Сервис "Библиотеки Москвы"'/>
             <div class="elements">
                 <div class="element element-1 after">
-
+                    <img :src="Biblioteka1" alt="">
                 </div>
                 <div class="element element-2 after">
                     <video-player
@@ -33,6 +33,7 @@ import Qr from "@/components/qr.vue";
 import Title from "@/components/title.vue";
 import MoscowLibrariesQRIcon from "@/assets/images/qr/moscowLibraries.svg";
 import VideoPlayer from "@/components/video-player.vue";
+import Biblioteka1 from "@/assets/images/full/resident/biblioteka_1.png";
 </script>
 
 <style lang="scss" scoped>
@@ -84,6 +85,10 @@ import VideoPlayer from "@/components/video-player.vue";
                     filter: blur(5px);
                     border-radius: 10px;
                     z-index: -1;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
                 }
             }
 

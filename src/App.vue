@@ -34,13 +34,13 @@ if (width >= 2000) {
         console.log('Изменение маршрута:', route.fullPath);
         socket.emit("pageTransition", route.fullPath);
     });
-    socket.on('pageTransition', (nextPage) => {
+    /*socket.on('pageTransition', (nextPage) => {
         console.log('Получено изменение маршрута:', nextPage);
         // Обновляем маршрут только если он отличается от текущего
         if (router.currentRoute.value.fullPath !== nextPage) {
             router.push(nextPage);
         }
-    });
+    });*/
 
 
     const show = ref(false)
@@ -69,7 +69,7 @@ if (width >= 2000) {
             hideVideo()
         }else{
             clearTimeout(timeout)
-            timeout = setTimeout(showVideo, 45 * 1000)
+            timeout = setTimeout(showVideo, 45000)
         }
     }
 

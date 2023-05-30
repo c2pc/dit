@@ -4,8 +4,12 @@
         <div class="content-2560">
             <Title class="title-button" title="RUSSPASS"/>
             <div class="elements">
-                <div class="element element-1 after"></div>
-                <div class="element element-2 after"></div>
+                <div class="element element-1 after">
+                    <img :src="RussPass1" alt="">
+                </div>
+                <div class="element element-2 after">
+                    <img :src="RussPass2" alt="">
+                </div>
                 <div class="element element-3 after">
                     <video-player
                         :loop="true"
@@ -31,6 +35,8 @@
 import Qr from "@/components/qr.vue";
 import Title from "@/components/title.vue";
 import RussPassQRIcon from "@/assets/images/qr/russPass.svg";
+import RussPass1 from "@/assets/images/full/resident/russpass_1.png";
+import RussPass2 from "@/assets/images/full/resident/russpass_2.png";
 import VideoPlayer from "@/components/video-player.vue";
 </script>
 
@@ -71,6 +77,10 @@ import VideoPlayer from "@/components/video-player.vue";
         margin-left: 60px;
         border-radius: 10px;
         position: relative;
+          img{
+              width: 100%;
+              height: 100%;
+          }
 
         &.after:after {
           content: '';

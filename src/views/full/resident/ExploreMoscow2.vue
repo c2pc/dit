@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <div class="content-2560">
-            <video ref="videoPlayer" class="video-player" autoplay width="100%" height="100%"></video>
+            <video ref="videoPlayer" class="video-player" autoplay></video>
         </div>
         <div class="content-1024">
             <div class="elements">
@@ -45,7 +45,7 @@ export default {
                     });
                     this.$refs.videoPlayer.srcObject = stream;
                 } else {
-                    console.error("Камера №10 не найдена.");
+                    console.error("Камера №4 не найдена.");
                 }
             } catch (error) {
                 console.error("Ошибка при захвате видео с веб-камеры:", error);
@@ -79,12 +79,13 @@ export default {
 
   .content-2560 {
     width: 2560px;
-
-    .iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      video{
+          width: auto;
+          height: calc(100% - 80px);
+      }
   }
 
   .content-1024 {

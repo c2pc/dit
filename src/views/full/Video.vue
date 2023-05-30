@@ -1,13 +1,14 @@
 <template>
     <div class="content">
-        <video-player :loop="true"
-                      src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/CiprPreview.mp4"/>
+        <video-player :loop="true" :with-sound="true"
+                      :src="CiprVideo"/>
     </div>
 </template>
 
 <script lang="ts" setup>
 
 import VideoPlayer from "@/components/video-player.vue";
+import CiprVideo from "@/assets/video/CiprPreview.mp4"
 </script>
 
 <style lang="scss" scoped>
