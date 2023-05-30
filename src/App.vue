@@ -1,17 +1,18 @@
 <template>
+    <div v-if="width < 2000 && show === true" class="background"></div>
     <router-view :key="route.fullPath"/>
 </template>
 
 <script lang="ts" setup>
 import {onMounted, ref, watchEffect} from "vue";
 import {useRoute, useRouter} from "vue-router";
-
-// Импортируйте socket из модуля main.ts
 import {socket} from "@/main";
 
 const route = useRoute();
 const router = useRouter();
 const width = window.innerWidth
+const show = ref(false)
+const watch = ref(false)
 
 window.onresize = function () {
     location.reload();
@@ -20,9 +21,16 @@ window.onresize = function () {
 if (width >= 2000) {
     socket.on('pageTransition', (nextPage) => {
         console.log('Получено изменение маршрута:', nextPage);
-        // Обновляем маршрут только если он отличается от текущего
         if (router.currentRoute.value.fullPath !== nextPage) {
             router.push(nextPage);
+        }
+    });
+    socket.on('showVideoInFull', (nextPage) => {
+        const video = document.querySelector("#videoPlayer")
+        const iframe = document.querySelector("iframe")
+        if (!video && !iframe) {
+            router.push(nextPage)
+            socket.emit("showVideoInTouch");
         }
     });
 } else {
@@ -34,46 +42,49 @@ if (width >= 2000) {
         console.log('Изменение маршрута:', route.fullPath);
         socket.emit("pageTransition", route.fullPath);
     });
-    /*socket.on('pageTransition', (nextPage) => {
+    socket.on('showVideoInTouch', () => {
+        console.log('showVideoInTouch')
+        show.value = true
+    });
+    socket.on('pageTransition', (nextPage) => {
         console.log('Получено изменение маршрута:', nextPage);
-        // Обновляем маршрут только если он отличается от текущего
         if (router.currentRoute.value.fullPath !== nextPage) {
             router.push(nextPage);
         }
-    });*/
+    });
 
 
-    const show = ref(false)
     let timeout = null
 
     const addEventListener = () => {
-        document.addEventListener('mousedown', touch);
-        document.addEventListener('mousemove', touch);
-        document.addEventListener('touchstart', touch);
-        document.addEventListener('keydown', touch);
+        window.addEventListener('mousedown', touch);
+        window.addEventListener('mousemove', touch);
+        window.addEventListener('touchstart', touch);
+        window.addEventListener('keydown', touch);
     }
     const showVideo = (): void => {
-        console.log("showVideo")
-        socket.emit("pageTransition", "/background")
-        show.value = true
+        if (route.fullPath !== '/') {
+            const iframe = document.querySelector("iframe")
+            if (!iframe){
+                socket.emit("showVideoInFull")
+            }
+        }
     }
     const hideVideo = (): void => {
-        console.log("hideVideo")
         router.push("/")
         socket.emit("pageTransition", "/")
         show.value = false
     }
     const touch = (): void => {
-        console.log("touch")
         if (show.value) {
             hideVideo()
-        }else{
+        } else {
             clearTimeout(timeout)
-            timeout = setTimeout(showVideo, 45000)
+            timeout = setTimeout(showVideo, 5000)
         }
     }
 
-    if (width < 2000){
+    if (width < 2000) {
         onMounted(addEventListener)
         onMounted(touch)
     }
@@ -81,5 +92,11 @@ if (width >= 2000) {
 </script>
 
 <style lang="scss" scoped>
+.background{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100000;
+}
 
 </style>

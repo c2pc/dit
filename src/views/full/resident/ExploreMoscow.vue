@@ -6,8 +6,8 @@
             <div class="elements">
                 <div class="element element-1 after">
                     <video-player
-                            :on-end="onEnd"
                             :loop="false"
+                            :on-end="onEnd"
                             src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/uznay.mp4"
                     />
                 </div>
@@ -43,7 +43,6 @@ import ExploreMoscow4 from "@/assets/images/full/resident/4-exploreMoscow.png";
 import ExploreMoscow5 from "@/assets/images/full/resident/5-exploreMoscow.png";
 import ExploreMoscow6 from "@/assets/images/full/resident/6-exploreMoscow.png";
 import VideoPlayer from "@/components/video-player.vue";
-import router from "@/router";
 import {socket} from "@/main";
 
 type Element = {
@@ -60,7 +59,6 @@ const elements: Element[] = [
 ]
 
 const onEnd = () => {
-    router.push('/residents/exploreMoscow2/VR-07_vr_roof-roof')
     socket.emit("pageTransition", "/residents/exploreMoscow2/VR-07_vr_roof-roof")
 }
 </script>
@@ -90,7 +88,6 @@ const onEnd = () => {
 
     .elements {
       position: relative;
-      max-height: 100%;
       max-width: 100%;
       height: 664px;
       max-height: 664px;
