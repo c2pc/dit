@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper-c27b6911.js";import{o as t,c as _}from"./index-0df30171.js";const o={},c={class:"content moscow-in-numbers"};function n(s,a){return t(),_("div",c)}const d=e(o,[["render",n],["__scopeId","data-v-02af2173"]]);export{d as default};

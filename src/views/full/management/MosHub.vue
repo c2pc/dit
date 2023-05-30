@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <video-player :on-end="onEnd" :loop="false"
-                      src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/render.mp4"/>
+                      src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/MosHub_Music.mp4"/>
     </div>
 </template>
 

@@ -46,7 +46,7 @@ export default {
             try {
                 const devices = await navigator.mediaDevices.enumerateDevices();
                 const camera1 = devices.find(
-                    (device, index) => device.kind === "videoinput" && index === 5
+                    (device, index) => device.kind === "videoinput" && index === 1
                 );
 
                 if (camera1) {
@@ -112,6 +112,7 @@ export default {
                 margin-left: 278px;
                 border-radius: 10px;
                 position: relative;
+                display: flex;
 
                 &.after:after {
                     content: '';
@@ -125,6 +126,7 @@ export default {
                     border-radius: 10px;
                     z-index: -1;
                 }
+
             }
 
             .element:first-child {

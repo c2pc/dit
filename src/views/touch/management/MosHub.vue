@@ -3,7 +3,7 @@
         <back :show-description="false" class="back-button" type="blue-filled" :on-click="()=>router.push('/management')"/>
         <div @mousedown="onClick" v-if="show === true" class="background"></div>
         <iframe
-            src="https://hub.mos.ru/dashboard/"
+            src="https://test-hub.mos.ru/"
             height="100%"
             width="100%"
             class="iframe"

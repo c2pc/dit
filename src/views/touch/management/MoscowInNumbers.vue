@@ -130,7 +130,7 @@ const blocks: Block[] = [
         title: "Волонтерская деятельность в Москве",
         width: 7,
         defaultIcon: VolunteersIcon,
-        onClick: () => socket.emit("pageTransition", "/management/moscow_in_numbers/kos-volunteers"),
+        onClick: () => socket.emit("pageTransition", "/management/moscow_in_numbers/kos-volunteer"),
     },
     {
         title: "Инновационное развитие",
