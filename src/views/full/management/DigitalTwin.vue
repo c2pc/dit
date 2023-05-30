@@ -1,15 +1,12 @@
 <template>
-    <div class="content moscow-in-numbers">
-        <div class="camera">
-            <div class="content">
+    <div class="content">
                 <div class="content-2560">
                     <div class="element">
-                        <video id="videoPlayer" ref="videoPlayer" class="video-player" autoplay></video>
+                        <video-player :on-end="onEnd" :loop="true"
+                                      src="https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/cd.mp4"/>
+                    </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -57,34 +54,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
-    position: relative;
-    max-width: 3584px;
-    min-width: 100vw;
-    max-height: 1024px;
-    min-height: 100vh;
-
-    .camera{
-        max-width: 3584px;
+.content{
+    height: 100vh;
+    background: url("@/assets/images/full/business/bg.png") left center no-repeat;
+    background-size: cover;
+}
+.content-2560 {
+    width: 2560px;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .video-player{
+        padding: 80px 150px 0;
+        position: relative;
+        max-width: 100%;
+        height: 970px;
         max-height: 1024px;
-        height: 100%;
-        border: none;
-        display: flex;
-        z-index: 0;
-        .content-2560 {
-            width: 2560px;
-            max-height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            .video-player{
-                width: 100%;
-                position: relative;
-                max-width: 100%;
-                height: 1000px;
-                width: 1920px;
-                max-height: 1024px;
-            }
-        }
-    }}
+    }
+}
 </style>
