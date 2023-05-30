@@ -1,0 +1,1 @@
+import{V as e}from"./video-player-21122a34.js";import{d as o,o as s,c as t,g as c,u as _,_ as r}from"./index-0cbbffd1.js";const n="/assets/CiprPreview-d6f3fd9c.mp4",a={class:"content"},d=o({__name:"Video",setup(i){return(p,u)=>(s(),t("div",a,[c(e,{loop:!0,"with-sound":!0,src:_(n)},null,8,["src"])]))}});const m=r(d,[["__scopeId","data-v-724cf134"]]);export{m as default};
