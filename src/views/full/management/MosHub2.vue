@@ -5,7 +5,7 @@
             <Title class="title-button" title="Mos.hub" />
             <div class="elements">
                 <div class="element element-1 after">
-                    <video ref="videoPlayer" class="video-player" autoplay></video>
+                    <video id="videoPlayer" ref="videoPlayer" class="video-player" autoplay></video>
                 </div>
             </div>
         </div>

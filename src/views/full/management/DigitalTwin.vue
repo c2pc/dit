@@ -1,7 +1,7 @@
 <template>
     <div class="content moscow-in-numbers">
         <div class="camera">
-            <video ref="videoPlayer" class="video-player" autoplay></video>
+            <video id="videoPlayer" ref="videoPlayer" class="video-player" autoplay></video>
         </div>
     </div>
 </template>
@@ -59,12 +59,12 @@ export default {
     min-height: 100vh;
 
     .camera{
-        width: 100vw;
-        height: 100vh;
+        width: 3584px;
+        height: 100%;
         border: none;
         .video-player{
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
         }
     }
 }
