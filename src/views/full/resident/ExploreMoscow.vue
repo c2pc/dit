@@ -59,7 +59,7 @@ const elements: Element[] = [
 ]
 
 const onEnd = () => {
-    socket.emit("pageTransition", "/residents/exploreMoscow2/VR-07_vr_roof-roof")
+    socket.emit("pageTransition", "/residents/exploreMoscow2/07_vr_roof-roof")
 }
 </script>
 

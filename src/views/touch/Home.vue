@@ -36,6 +36,9 @@ import PersonIcon from "@/assets/images/touch/home/person.svg";
 import VideoDefault from "@/assets/images/touch/home/video-default.png";
 import VideoHover from "@/assets/images/touch/home/video-hover.png";
 import VideoIcon from "@/assets/images/touch/home/video.svg";
+import {socket} from "@/main";
+import {onBeforeUnmount, onMounted, ref} from "vue";
+import {useRoute} from "vue-router";
 
 const elements: Element[] = [
     {
@@ -91,6 +94,48 @@ const elements: Element[] = [
         hoverIconStyle: {},
     },
 ]
+
+let timeout1 = null
+const show1 = ref(false)
+
+const addEventListener1 = () => {
+    window.addEventListener('mousedown', touch1);
+    window.addEventListener('mousemove', touch1);
+    window.addEventListener('touchstart', touch1);
+    window.addEventListener('keydown', touch1);
+}
+
+const removeEventListener1 = () => {
+    window.removeEventListener('mousedown', touch1);
+    window.removeEventListener('mousemove', touch1);
+    window.removeEventListener('touchstart', touch1);
+    window.removeEventListener('keydown', touch1);
+    clearTimeout(timeout1)
+    show1.value = false
+}
+
+const showVideo = (): void => {
+    socket.emit("pageTransition", "/background")
+    show1.value = true
+}
+
+const hideVideo1 = (): void => {
+    socket.emit("pageTransition", "/")
+    show1.value = false
+}
+
+const touch1 = (): void => {
+    if (show1.value) {
+        hideVideo1()
+    } else {
+        clearTimeout(timeout1)
+        timeout1 = setTimeout(showVideo, 5000)
+    }
+}
+
+onMounted(addEventListener1)
+onMounted(touch1)
+onBeforeUnmount(removeEventListener1)
 </script>
 
 <style lang="scss" scoped>

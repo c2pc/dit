@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts" setup>
-import {onMounted, ref, watchEffect} from "vue";
+import {onBeforeUnmount, onMounted, ref, watchEffect} from "vue";
 import {useRoute, useRouter} from "vue-router";
 import {socket} from "@/main";
 
@@ -62,6 +62,14 @@ if (width >= 2000) {
         window.addEventListener('touchstart', touch);
         window.addEventListener('keydown', touch);
     }
+    const removeEventListener = () => {
+        window.removeEventListener('mousedown', touch);
+        window.removeEventListener('mousemove', touch);
+        window.removeEventListener('touchstart', touch);
+        window.removeEventListener('keydown', touch);
+        clearTimeout(timeout)
+        show.value = false
+    }
     const showVideo = (): void => {
         if (route.fullPath !== '/') {
             const video = document.querySelector("#videoPlayer")
@@ -72,8 +80,12 @@ if (width >= 2000) {
         }
     }
     const hideVideo = (): void => {
+        //Удалить, если возникнут проблемы с переходом на главный экран
+        ////
         router.push("/")
         socket.emit("pageTransition", "/")
+        ////
+        //socket.emit("pageTransition", route.fullPath)
         show.value = false
     }
     const touch = (): void => {
@@ -85,10 +97,9 @@ if (width >= 2000) {
         }
     }
 
-    if (width < 2000) {
-        onMounted(addEventListener)
-        onMounted(touch)
-    }
+    onMounted(addEventListener)
+    onMounted(touch)
+    onBeforeUnmount(removeEventListener)
 }
 </script>
 

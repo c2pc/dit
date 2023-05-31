@@ -16,7 +16,7 @@ io.on('connection', (socket) => {
 
     // Обработчик события изменения маршрута
     socket.on('pageTransition', (nextPage) => {
-        const page = nextPage + "?date=" + Date.now()
+        const page = nextPage
         // Сохранить новый маршрут для данного клиента
         routeStore.set(socket.id, page);
 
@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
 
     // Перенаправление на страницу background
     socket.on('showVideoInFull', () => {
-        const page = "/background?date=" + Date.now()
+        const page = "/background"
         routeStore.set(socket.id, page);
         socket.broadcast.emit('showVideoInFull', page);
 

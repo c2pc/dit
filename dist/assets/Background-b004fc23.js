@@ -1,0 +1,1 @@
+import{V as e}from"./video-player-4aa63043.js";import{d as o,b as c,c as t,j as s,_}from"./index-7ea89988.js";const a={class:"content"},n=o({__name:"Background",setup(r){return(d,p)=>(c(),t("div",a,[s(e,{loop:!0,src:"https://s3.timeweb.com/co97539-43c5a8b5-50e0-4436-87cb-39a28e7cf040/render.mp4"})]))}});const i=_(n,[["__scopeId","data-v-46e66bb1"]]);export{i as default};
